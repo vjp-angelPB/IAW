@@ -4,41 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="calculadora.css">
 </head>
 <body>
+
     <!-- Creo los botones de calculadora científica y normal-->
+    
     <div style="display: inline-block">
-        <button onclick="CalculadoraCientifica();">Científica</button>
+        <button onclick="cambiarcientifico();" id="botoncientifico">Científica</button>
     </div>
 
     <div style="display: inline-block"> 
-        <button onclick="CalculadoraNormal();">Normal</button>
-        
+        <button onclick="cambiarnormal();">Normal</button>
     </div>
 
-    <!-- Hago 2 saltos de línea-->
     <br>
     <br>
 
-    <!-- Creo los cuadros de texto donde el usuario introducirá los números-->
-    <input type="text" style="display: block;">
-    <input type="text" style="display: block;">
+    <!-- Creo los cuadros de texto donde el usuario introducirá los números, por defecto 
+    aparece un 0-->
+    <input type="text" style="display: block;" id="fondoamarillo" value="0">
+    <input type="text" style="display: block;" id="fondoamarillo" value="0">
 
-   
-    <button>+</button>
-    <button>-</button>
-    <button>*</button>
-    <button>/</button>
-    <button>^</button>
+
+   <!-- Creo los botones para los operadores-->
+    <div style="display: inline-block;">
+        <button onclick="sumar()">+</button>
+    </div>
+
+    <div style="display: inline-block;">
+        <button onclick="restar()">-</button>
+    </div>
+    
+    <div style="display: inline-block;">
+        <button onclick="multiplicar()">*</button>
+    </div>
+
+    <div style="display: inline-block;">
+        <button onclick="dividir()">/</button>
+    </div>
+
+    <div style="display: inline-block;">
+        <button onclick="elevar()" id="botonelevar">^</button>
+    </div>
 
 
     <br>
-    <input type="text">
+    <!-- Creo el cuadro de texto que mostrará el resultado y por defecto aparece un 0 -->
+    <input type="text" id="textoverde" value="0">
+
     <br>
     <br>
 
-    <button></button>
-    <button></button>
+    <button onclick="Restaurar();">Restaurar</button>
+    <button onclick="Lupa();">Lupa</button>
 
 </body>
 </html>

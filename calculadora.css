@@ -1,0 +1,11 @@
+/*Asigno a los input con id fondoamarillo el color de fondo amarillo */
+#fondoamarillo:focus {
+    background-color: yellow;
+}
+
+/* Asigno al input que da el resultado el color verde y hago que se vea más grueso */
+#textoverde {
+    color: green;
+    font-weight: bolder;
+}
+
