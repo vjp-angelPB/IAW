@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta>
+    <meta charset="UTF-8" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debuggin JavaScript!!!</title>
+</head>
+<body style="background-color: lightgray;">
+    <div id="seccion-operaciones-id" style="margin: auto; border: 2px solid gray; width: 500px; height: 90px; background-color: white; text-align: left; padding: 10px;">
+        <p>Mostraremos el resultado de una operación....</p>
+    </div>
+
+    <div style="width: 150px; margin: auto; padding-top: 50px; padding-bottom: 50px;">
+        <div style="display: inline-block; margin-right: 20px;">
+            <button onclick="operar();">Operar</button>
+        </div>
+
+        <div style="display: inline-block;">
+            <button onclick="limpiar();">Limpiar</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    var a=7;
+    var b=3;
+
+    /*
+    Función para incluir contenido dinámico en el DOM de HTML
+    */
+    function operar(){
+
+        if (document.getElementById("nuevo-parrafo-id")==null){
+            var parrafoResultado = document.createElement("p"); //creación del elemento p
+            // El elemento que vamos a incluir dentro del div
+
+            parrafoResultado.setAttribute("id", "nuevo-parrafo-id");
+
+            var resultado = a+b
+
+            var text = document.createTextNode("El resultado de sumar " + a + " y " + b + " es: " + resultado); // creación de un texto
+
+            parrafoResultado.appendChild(text); //añadimos el texto al elemento p
+    
+            document.getElementById("seccion-operaciones-id").appendChild(parrafoResultado);// añadimos el elemento p al div
+        }
+    }
+
+    function limpiar(){
+        if (document.getElementById("nuevo-parrafo-id")!=null){
+            document.getElementById("seccion-operaciones-id").removeChild(document.getElementById("nuevo-parrafo-id")
+            );
+        }
+    }
+
+
+
+
+/* La notación "." es objeto . función que hace el objeto 
+    objeto    .   función del objeto
+    document  .   getelementbyid
+
+*/
+
+</script>
+
+</html>
