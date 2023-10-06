@@ -28,7 +28,7 @@ function sumar(){
     
     var numero2 = partseInt(document.getElementById("num2").value);
 
-    var resultado = eval(numero1 + "+" + numero2); */
+    var resultado = numero1 + numero2; */
 
 };
 
