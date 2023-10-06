@@ -11,7 +11,6 @@
 <body>
 
     <!-- Creo los botones de calculadora científica y normal-->
-    
     <div style="display: inline-block">
         <button onclick="cambiarcientifico();" id="botoncientifico">Científica</button>
     </div>
@@ -23,10 +22,11 @@
     <br>
     <br>
 
+
     <!-- Creo los cuadros de texto donde el usuario introducirá los números, por defecto 
     aparece un 0-->
-    <input type="text" style="display: block;" id="fondoamarillo" value="0">
-    <input type="text" style="display: block;" id="fondoamarillo" value="0">
+    <input type="text" style="display: block;" id="num1" value="0" class="fondoamarillo">
+    <input type="text" style="display: block;" id="num2" value="0" class="fondoamarillo">
 
 
    <!-- Creo los botones para los operadores-->
@@ -53,11 +53,13 @@
 
     <br>
     <!-- Creo el cuadro de texto que mostrará el resultado y por defecto aparece un 0 -->
-    <input type="text" id="textoverde" value="0">
+    <input type="number" value="0" readonly id="num3">
+
 
     <br>
     <br>
 
+<!-- Creo los botones para restaurar los input a 0 y para ampliar con la Lupa-->
     <button onclick="Restaurar();">Restaurar</button>
     <button onclick="Lupa();">Lupa</button>
 
