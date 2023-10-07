@@ -102,3 +102,14 @@ function Lupa(){
     
 
 };
+
+
+
+
+
+function SalirLupa(){
+
+};
+
+
+
