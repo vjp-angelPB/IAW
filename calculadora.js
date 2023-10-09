@@ -97,17 +97,50 @@ function Restaurar(){
 };
 
 
+/*Creo la función Lupa que se activará cuando se pulse el botón de "Lupa" */
 function Lupa(){
 
-    
+    let mostrarLupa = document.getElementById('inputLupa')
+    let mostrardivlupa = document.getElementById('divLupa')
 
+    if (mostrarLupa.style.visibility == 'visible'){
+        // Instrucciones si se cumple la condición
+        alert ('La lupa ya era visible');
+    } 
+    else {
+        // Instrucciones si no se cumple la condición
+        mostrardivlupa.style.visibility='visible';
+    };
+
+    document.getElementById('inputLupa').value = document.getElementById('num3').value;
 };
 
 
+var numero = document.getElementById('num3').value
+if (numero > 0){
+    numero.style.color = 'green';
+    numero.style.fontWeigth = 'bold';
+}
 
+else if (numero < 0) {
+    numero.style.color = 'red';
+    numero.style.fontWeigth = 'bold';
+}
 
-
+/*Creo la función SalirLupa que se activará cuando se pulse el botón de "Salir" */
 function SalirLupa(){
+
+    let ocultarLupa = document.getElementById('salirlupa')
+    let ocultardivlupa = document.getElementById('divLupa')
+
+    if (ocultarLupa.style.visibility == 'hidden'){
+        // Instrucciones si se cumple la condición    
+        alert ('El div ya estaba oculto');
+    }
+    else {
+        // Instrucciones si no se cumple la condición
+        ocultardivlupa.style.visibility='hidden';
+    }
 
 };
 
