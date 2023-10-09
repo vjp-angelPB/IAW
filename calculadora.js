@@ -23,6 +23,16 @@ function sumar(){
      
     document.getElementById("num3").value = resultado;
 
+    if (resultado > 0){
+        document.getElementById("num3").value.style.color = 'green';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
+    
+    else if (resultado < 0) {
+        document.getElementById("num3").value.style.color = 'red';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
+
     /* OTRA FORMA DE HACERLO SIN EVAL */ 
     /*var numero1 = partseInt(document.getElementById("num1").value);
     
@@ -43,6 +53,16 @@ function restar(){
     var resultado = numero1 - numero2;
 
     document.getElementById("num3").value = resultado;
+
+    if (resultado > 0){
+        document.getElementById("num3").value.style.color = 'green';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
+    
+    else if (resultado < 0) {
+        document.getElementById("num3").value.style.color = 'red';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
 };
 
 
@@ -56,6 +76,16 @@ function multiplicar(){
     var resultado = numero1 * numero2;
 
     document.getElementById("num3").value = resultado;
+
+    if (resultado > 0){
+        document.getElementById("num3").value.style.color = 'green';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
+    
+    else if (resultado < 0) {
+        document.getElementById("num3").value.style.color = 'red';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
 };
 
 
@@ -69,6 +99,16 @@ function dividir(){
     var resultado = numero1 / numero2;
 
     document.getElementById("num3").value = resultado;
+
+    if (resultado > 0){
+        document.getElementById("num3").value.style.color = 'green';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
+    
+    else if (resultado < 0) {
+        document.getElementById("num3").value.style.color = 'red';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
 };
 
 
@@ -82,6 +122,16 @@ function elevar(){
     var resultado = numero1 ** numero2;
     
     document.getElementById("num3").value = resultado;
+
+    if (resultado > 0){
+        document.getElementById("num3").value.style.color = 'green';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
+    
+    else if (resultado < 0) {
+        document.getElementById("num3").value.style.color = 'red';
+        document.getElementById("num3").value.style.fontWeigth = 'bold';
+    }
 };
 
 
@@ -115,17 +165,6 @@ function Lupa(){
     document.getElementById('inputLupa').value = document.getElementById('num3').value;
 };
 
-
-var numero = document.getElementById('num3').value
-if (numero > 0){
-    numero.style.color = 'green';
-    numero.style.fontWeigth = 'bold';
-}
-
-else if (numero < 0) {
-    numero.style.color = 'red';
-    numero.style.fontWeigth = 'bold';
-}
 
 /*Creo la función SalirLupa que se activará cuando se pulse el botón de "Salir" */
 function SalirLupa(){

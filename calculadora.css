@@ -1,11 +1,11 @@
 /*Asigno a los input con id fondoamarillo el color de fondo amarillo */
-.fondoamarillo:focus {
-    background-color: yellow;
+.fondonaranja:focus {
+    background-color: orange;
 }
 
 /* Creo las características del div que aparecerá al hacer clic en el botón Lupa*/
 #divLupa {
-    width: 500px;
+    width: 700px;
     height: 300px;
     border: 2px solid grey;
     margin-left: auto;
@@ -17,16 +17,19 @@
 #inputLupa {
     background-color:rgba(28, 27, 27, 0.758);
     position: relative;
-    top: 50%;
-    width: 493px;
+    top: 25%;
+    width: 500px;
     height: 50px;
     font-size: 50px;
+    color:yellow;
+    background-color:black; 
+    margin-left: 90px;
 }
 
 #salirlupa{
     position: relative;
     top: 50%;
     left: 50;
-    transform: translate(185%,150%);
+    transform: translate(285%,-100%);
     font-size: 20px;
 };
