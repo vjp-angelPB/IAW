@@ -26,6 +26,7 @@
     margin-left: 90px;
 }
 
+/* Creo las características que tendrá el botón de Salir cuando pulsemos la Lupa*/
 #salirlupa{
     position: relative;
     top: 50%;
