@@ -8,19 +8,52 @@
 <body>
     <form method="GET" action="localhost://misuperapp">
 
-        <p>Nombre: <input type="text" name="nombre" size="40"></p>
-        <p>Año nacimiento: <input type="text" name="nacimiento"></p>
-        <p>Contraseña: <input type="password" name="password"></p>
-        <p>Género: 
-            <input type="radio" name="hm" value="h">Hombre
-            <input type="radio" name="hm" value="m">Mujer
+        <!-- Todo componente de formulario debe tener asociado una etiqueta label por motivos de accesibilidad -->
+        <label for="nombre">Nombre:</label> <input type="text" name="nombre" id="nombre" size="40">
+        
+        <br>
+
+        <label for="nacimiento">Año nacimiento:</label> <input type="text" name="nacimiento" id="nacimiento">
+        
+        <br>
+       
+        <p> 
+            Género:
+            <!-- Componente radiobutton. El atributo name de cada opción del radio debe coindicir -->
+            <input type="radio" name="hm" id="hm_id_hombre" value="h"><label for="hm_id_hombre">Hombre</label>
+
+            <input type="radio" name="hm" id="hm_id_mujer" value="m"><label for="hm_id_mujer">Mujer</label>
+            Deportes:
+            <input type="radio" name="deportes" id="deporte_basket" value="basket"> <label for="deporte_basket">Basket</label>
+
+            <input type="radio" name="deportes" id="deporte_futbol" value="futbol"> <label for="deporte_futbol">Fútbol</label>
         </p>
 
         <p>
+            <!-- Botones en formularios html -->
+            <!-- Botón con funcionalidad de envío -->
             <input type="submit" value="Enviar">
+
+            <!-- Botón con funcionalidad de borrado del formulario -->
             <input type="reset" value="Limpiar">
+
+            <!-- Botón normal -->
+            <button onclick="alert('Botón sin funcionalidad')">Mi botón</button>
+            
+            <!-- Imagen que funciona como un botón. El atributo alt se usa para la accesibilidad del botón -->
+            <input type="image" src="./img/submit.png" width="48" height="48" alt="Botón de submit" onclick=""> 
         </p>
 
+        <label for="marcas_porsche">Porsche</label><input type="checkbox" name="marcas" id="marcas_porsche" value="Porsche">
+
+        <label for="marcas_lambo">Lamborghini</label><input type="checkbox" name="marcas" id="marcas_lambo" value="Lamborghini">
+
+        <label for="marcas_aston">Aston Martin</label><input type="checkbox" name="marcas" id="marcas_aston" value="Aston Martin">
+
+
+
+
+        
 
 
     </form>
