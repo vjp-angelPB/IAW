@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALIDACIONES</title>
+</head>
+<body>
+    <form onsubmit="validarDireccion()" action="" method="get">
+        
+        <label for="direccion-txt">Dirección </label><input type="text" name="direccion-txt" id="direccion-txt">
+        
+        <button type="submit">Enviar</button>
+    
+    
+    </form>
+
+</body>
+</html>
+
+<script>
+    function validarDireccion(){
+        let contenido=document.getElementById("direccion-txt").value;
+
+        if(contenido.length > 8){
+            alert("La dirección no es correcta");
+            return false;
+        }
+        else{
+            return true;
+        }
+
+    }
+
+
+</script>
