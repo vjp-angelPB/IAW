@@ -6,7 +6,7 @@
     <title>VALIDACIONES</title>
 </head>
 <body>
-    <form action="" method="get" onsubmit="return validarDireccion();">
+    <form action="" method="get" onsubmit="return validarDireccion2();">
         
         <label for="direccion-txt">Dirección </label><input type="text" name="direccion-txt" id="direccion-txt">
         
@@ -22,35 +22,49 @@
 
 <script>
     /*
+    // Se trata de una validación con mensajes genéricos que pueden afectar a la experiencia del usuario con mi web
     function validarDireccion(){
-        let contenido=document.getElementById("direccion-txt").value;
+        let contenido=document.getElementById("direccion-txt").value.trim();
         let valorRetorno=true;
 
 
-        if ((contenido=="") || (contenido.length > 8)){
+        if (contenido.length > 8){ // solo se considera que la dirección es incorrecta si la longitud es estrictamente mayor que 8 
             alert("La dirección no es correcta");
             valorRetorno= false;
         }
-        return valorRetorno;
+
+        document.getElementById("direccion-txt").value.contenido;
+        return valorRetorno
 
     }
-*/
+    */
 
+    const LONGITUD_DIRECCION=200;
+
+    /*
+    Validación del campo dirección
+    Este campo es correcto si:
+    1. No es vacío
+    2. Tiene una longitud menor o igual a 8 caracteres
+    */
     function validarDireccion2(){
-        let contenido=document.getElementById("direccion-txt").value;
-        let valorRetorno= true;
-
+        let contenido=document.getElementById("direccion-txt").value.trim(); 
+        // la función trim() elimina los caracteres en blanco del principio y del final
+        let valorRetorno= true; 
+        // variable usada para asegurar un único punto de retorno
         
-        if (""==contenido.trim() (contenido=="")){
+        
+        if (contenido==""){ // comprobación de campo vacío
             alert("El campo dirección es obligatorio");
             valorRetorno=false;
         } 
-        else if (contenido.length > 8){
+        else if (contenido.length > LONGITUD_DIRECCION){ // comprobación de la longitud
             alert("La longitud máxima del campo dirección es de 8 caracteres");
             valorRetorno= false;
         }
 
-        return valorRetorno;
+        document.getElementById("direccion-txt").value.contenido; // para asegurar que el formulario enviará los datos sin espacios en blanco al principio y al final asignamos la variable contenido al componente dirección
+        return valorRetorno; // punto de retorno único
 
     }
 
