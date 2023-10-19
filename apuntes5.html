@@ -6,7 +6,7 @@
     <title>VALIDACIONES</title>
 </head>
 <body>
-    <form onsubmit="validarDireccion()" action="" method="get">
+    <form action="" method="get" onsubmit="return validarDireccion();">
         
         <label for="direccion-txt">Dirección </label><input type="text" name="direccion-txt" id="direccion-txt">
         
@@ -21,28 +21,42 @@
 </html>
 
 <script>
+    /*
     function validarDireccion(){
         let contenido=document.getElementById("direccion-txt").value;
+        let valorRetorno=true;
 
-        if(contenido.length > 8){
+
+        if ((contenido=="") || (contenido.length > 8)){
             alert("La dirección no es correcta");
-            return false;
+            valorRetorno= false;
         }
-        else{
-            return true;
+        return valorRetorno;
+
+    }
+*/
+
+    function validarDireccion2(){
+        let contenido=document.getElementById("direccion-txt").value;
+        let valorRetorno= true;
+
+        
+        if (""==contenido.trim() (contenido=="")){
+            alert("El campo dirección es obligatorio");
+            valorRetorno=false;
+        } 
+        else if (contenido.length > 8){
+            alert("La longitud máxima del campo dirección es de 8 caracteres");
+            valorRetorno= false;
         }
+
+        return valorRetorno;
+
     }
 
-    function validarTelefono(){
+/* function validarTelefono(){
         let contenido=document.getElementById("tlfn-txt").value;
 
-        if(""){
-
-        }
-        else{
-            
-        }
-
     }
-
+*/
 </script>
