@@ -12,9 +12,10 @@
         
         <label for="tlfn-txt">Teléfono </label><input type="text" name="tlfn-txt" id="tlfn-txt">
 
+        <label for="dirFac">Dirección de Facturación</label><input type="text" name="dirFac" id="dirFac">
+
         <button type="submit">Enviar</button>
-    
-    
+
     </form>
 
 </body>
@@ -68,7 +69,12 @@
 
     }
 
-/* function validarTelefono(){
+    function direccionFacturacion(){
+        contenido =document.getElementById("dirFac").value
+        // longitud minima 10 caracteres
+    }
+
+    /* function validarTelefono(){
         let contenido=document.getElementById("tlfn-txt").value;
 
     }
