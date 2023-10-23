@@ -81,12 +81,12 @@ def mostrar_por_profesion():
 
 # Creamos una función para cambiar de profesión
 def cambiar_profesion():
-    nombre_profesion=input("Introduce el nombre de un contacto: ")
+    nombre_contac = input("Introduce el nombre de un contacto: ")
     
     for contacto in agenda:
-        if nombre_profesion== contacto[4]:
-            nueva_profesion=input("Cambia su profesión a: ")
-            contacto[4]=nueva_profesion
+        if nombre_contac == contacto[0]:
+            nueva_profesion = input("Cambia su profesión a: ")
+            contacto[4] = nueva_profesion
     input("Presiona enter para continuar...")
 
 def main():
