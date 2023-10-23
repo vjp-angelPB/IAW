@@ -74,6 +74,7 @@ def mostrar_por_profesion():
             print("Teléfono:", contacto[2])
             print("Instagram:", contacto[3])
             print("Profesión: ",contacto[4])
+            print("***************************************")
         else: 
             print("No existe un contacto con esta profesión: ",trabajo)
     input("Presiona enter para continuar...")
