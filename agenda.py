@@ -85,6 +85,7 @@ def cambiar_profesion():
     for contacto in agenda:
         if nombre_profesion== contacto[4]:
             nueva_profesion=input("Cambia su profesión a: ")
+            contacto[4]=nueva_profesion
     input("Presiona enter para continuar...")
 
 def main():

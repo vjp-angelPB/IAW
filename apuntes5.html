@@ -71,6 +71,18 @@
 
     function direccionFacturacion(){
         contenido =document.getElementById("dirFac").value
+        let valorRetorno= true; 
+
+        if (contenido==""){
+            alert("El campo dirección de Facturación es obligatorio.")
+            let valorRetorno= false; 
+        }
+        else if (contenido.length < 10){
+            alert("La longitud mínima del campo dirección es de 10 caracteres, vuelva a intentarlo otra vez.")
+            let valorRetorno= false; 
+        }
+
+        return valorRetorno;
         // longitud minima 10 caracteres
     }
 
