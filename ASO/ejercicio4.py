@@ -12,7 +12,7 @@ def pedir_dos_numeros():
     # muestro por pantalla la línea del segundo número que le paso
             lineas=fichero.readlines()
             print(lineas[num2-1])
-
+ 
         else:
             print("El número no está dentro del rango")
 
