@@ -11,9 +11,9 @@ def limpiar_pantalla():
 def agregar_contacto():
     nombre = input("Introduce el nombre del contacto: ")
     apellidos = input("Introduce los apellidos del contacto: ")
-    telefono = int(input("Introduce el nuevo número de teléfono: "))
-    while len(telefono) != 9:
-        telefono = int(input("Error, intenta volver a escribir el nuevo número de teléfono: "))
+    telefono = (input("Introduce el nuevo número de teléfono: "))
+    while len(telefono) != 9 and telefono != int:
+        telefono = (input("Error, intenta volver a escribir el nuevo número de teléfono: "))
 
     instagram = input("Introduce tu Instagram: ")
     # Hacemos un bucle que mientras que no pongamos el @ nos siga preguntando
@@ -21,8 +21,13 @@ def agregar_contacto():
         instagram = input("Introduce tu Instagram: ")
     
     profesion = input("Introduce tu profesión: ")
+    amigos= input("¿Este contacto es tu amigo, si o no?: ")
+    if amigos == "si":
+        amigos=True
+    else :
+        amigos=False
 
-    contacto = [nombre, apellidos, telefono, instagram, profesion]
+    contacto = [nombre, apellidos, telefono, instagram, profesion,amigos]
     agenda.append(contacto)
     print("El contacto se añadió con exito.")
     input("Presiona enter para continuar...")
@@ -59,6 +64,7 @@ def mostrar_lista_completa():
             print("Teléfono:", contacto[2])
             print("Instagram:", contacto[3])
             print("Profesión: ",contacto[4])
+            print("Amigos: ",contacto[5])
     input("Presiona enter para continuar")
 
 # Creamos una función para mostrar el tamaño de la agenda
@@ -77,6 +83,7 @@ def mostrar_por_profesion():
             print("Teléfono:", contacto[2])
             print("Instagram:", contacto[3])
             print("Profesión: ",contacto[4])
+            print("Amigos: ",contacto[5])
             print("***************************************")
         else: 
             print("No existe un contacto con esta profesión: ",trabajo)
@@ -92,6 +99,30 @@ def cambiar_profesion():
             contacto[4] = nueva_profesion
     input("Presiona enter para continuar...")
 
+# En este ejercicio pido el nombre de un contacto y hago que para la agenda entera si el nombre que he introducido era amigo que muestre por pantalla que lo era, de lo contrario mostrará que ese contacto no tiene amigos
+def mostrar_amigos():
+    nombre= input("Introduce el nombre del contacto: ")
+    for contacto in agenda:
+        if contacto[5] == True:
+            print("El contacto:", contacto[0], "es tu amigo")
+        else:
+            print("El contacto ", nombre, "no tiene amigos.")
+    input("Presiona enter para continuar...")
+
+# En este ejercicio pido el nombre de un contacto y comparo ese nombre con todos los contactos de la agenda, y el que coincida hace: si era amigo lo cambia y hace que no sea amigo y lo muestra por pantaalla, y si no era amigo hace que sea amigo y lo muestra por pantalla
+def cambiar_amistad():
+    nombre_contac = input("Introduce el nombre del contacto: ")
+    for contacto in agenda:
+        if nombre_contac == contacto[0]:
+            if contacto[5]==True:
+                contacto[5]=False
+                print("Este contacto ya no es tu amigo")
+            elif contacto[5]==False:
+                contacto[5]=True
+                print("¡Enhorabuena has hecho un nuevo amigo!")
+    input("Presiona enter para continuar...")
+
+
 def main():
     agenda = []
     while True:
@@ -104,7 +135,9 @@ def main():
         print("5. Tamaño de la agenda ")
         print("6. Mostrar la profesión ")
         print("7. Cambiar de profesión ")
-        print("8. Salir del programa ")
+        print("8. Mostrar amigos ")
+        print("9. Cambiar amistad ")
+        print("10. Salir del programa ")
 
         opcion = input("Selecciona una opción: ")
 
@@ -123,6 +156,10 @@ def main():
         elif opcion == "7":
             cambiar_profesion()
         elif opcion == "8":
+            mostrar_amigos()
+        elif opcion == "9":
+            cambiar_amistad()
+        elif opcion == "10":
             print("Saliendo del programa...")
             break
         else:
