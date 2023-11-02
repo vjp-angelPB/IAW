@@ -1,0 +1,10 @@
+Ana 8.5
+Carlos 7.2
+Carmen 6.0
+Diego 7.6
+Juan 6.8
+Laura 8.9
+Luis 4.3
+Maria 9.3
+Pedro 5.5
+Sofia 9.7

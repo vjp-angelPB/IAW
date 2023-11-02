@@ -11,6 +11,7 @@ def limpiar_pantalla():
 def agregar_contacto():
     nombre = input("Introduce el nombre del contacto: ")
     apellidos = input("Introduce los apellidos del contacto: ")
+    # En telefono hago que mientras que el número de teléfono introducido no tenga de longitud 9 caracteres o sea de tipo int siga preguntando
     telefono = (input("Introduce el nuevo número de teléfono: "))
     while len(telefono) != 9 and telefono != int:
         telefono = (input("Error, intenta volver a escribir el nuevo número de teléfono: "))
@@ -21,8 +22,12 @@ def agregar_contacto():
         instagram = input("Introduce tu Instagram: ")
     
     profesion = input("Introduce tu profesión: ")
+    # En este campo compruebo si el contacto que estamos creando es amigo o no
     amigos= input("¿Este contacto es tu amigo, si o no?: ")
-    if amigos == "si":
+    while amigos != "si" and amigos != "Si" and amigos != "SI" and amigos != "No" and amigos != "no" and amigos != "NO":
+        amigos= input("¿Este contacto es tu amigo, si o no?: ")
+
+    if amigos == "si" or amigos == "Si" or amigos == "SI":
         amigos=True
     else :
         amigos=False
@@ -64,7 +69,10 @@ def mostrar_lista_completa():
             print("Teléfono:", contacto[2])
             print("Instagram:", contacto[3])
             print("Profesión: ",contacto[4])
-            print("Amigos: ",contacto[5])
+            if contacto[5] == True:
+                print("Amigos: Sí")
+            else :
+                print("Amigos: No")
     input("Presiona enter para continuar")
 
 # Creamos una función para mostrar el tamaño de la agenda
@@ -83,7 +91,10 @@ def mostrar_por_profesion():
             print("Teléfono:", contacto[2])
             print("Instagram:", contacto[3])
             print("Profesión: ",contacto[4])
-            print("Amigos: ",contacto[5])
+            if contacto[5] == True:
+                print("Amigos: Sí")
+            else :
+                print("Amigos: No")
             print("***************************************")
         else: 
             print("No existe un contacto con esta profesión: ",trabajo)
@@ -101,17 +112,14 @@ def cambiar_profesion():
 
 # En este ejercicio pido el nombre de un contacto y hago que para la agenda entera si el nombre que he introducido era amigo que muestre por pantalla que lo era, de lo contrario mostrará que ese contacto no tiene amigos
 def mostrar_amigos():
-    nombre= input("Introduce el nombre del contacto: ")
     for contacto in agenda:
-        if contacto[5] == True:
+        while contacto[5] == True:
             print("El contacto:", contacto[0], "es tu amigo")
-        else:
-            print("El contacto ", nombre, "no tiene amigos.")
     input("Presiona enter para continuar...")
 
 # En este ejercicio pido el nombre de un contacto y comparo ese nombre con todos los contactos de la agenda, y el que coincida hace: si era amigo lo cambia y hace que no sea amigo y lo muestra por pantaalla, y si no era amigo hace que sea amigo y lo muestra por pantalla
 def cambiar_amistad():
-    nombre_contac = input("Introduce el nombre del contacto: ")
+    nombre_contac = input("Introduce el nombre del contacto para que sea tu amigo o deje de serlo: ")
     for contacto in agenda:
         if nombre_contac == contacto[0]:
             if contacto[5]==True:
