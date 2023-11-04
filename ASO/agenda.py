@@ -8,10 +8,10 @@ def limpiar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 # Creamos una función para agregar un contacto con un nombre, apellido, teléfono e instagram
-def agregar_contacto():
+def agregar_contacto(): 
     nombre = input("Introduce el nombre del contacto: ")
     apellidos = input("Introduce los apellidos del contacto: ")
-    telefono = int(input("Introduce el nuevo número de teléfono: "))
+    telefono = input("Introduce el nuevo número de teléfono: ")
     while len(telefono) != 9:
         telefono = int(input("Error, intenta volver a escribir el nuevo número de teléfono: "))
 
@@ -59,6 +59,7 @@ def mostrar_lista_completa():
             print("Teléfono:", contacto[2])
             print("Instagram:", contacto[3])
             print("Profesión: ",contacto[4])
+            print()
     input("Presiona enter para continuar")
 
 # Creamos una función para mostrar el tamaño de la agenda
@@ -69,6 +70,7 @@ def tamaño_de_la_agenda():
 # Creamos una función para mostrar todos los contactos con la misma profesión
 def mostrar_por_profesion():
     trabajo=input("Introduce tu profesión: ")
+    encontrados = False
     for contacto in agenda:
         if trabajo == contacto[4]:
             print("Estos son todos los contactos que comparten la profesión: ")
@@ -78,8 +80,9 @@ def mostrar_por_profesion():
             print("Instagram:", contacto[3])
             print("Profesión: ",contacto[4])
             print("***************************************")
-        else: 
-            print("No existe un contacto con esta profesión: ",trabajo)
+            encontrados = True
+    if not encontrados:
+        print("No existe un contacto con esta profesión: ",trabajo)
     input("Presiona enter para continuar...")
 
 # Creamos una función para cambiar de profesión
@@ -90,7 +93,11 @@ def cambiar_profesion():
         if nombre_contac == contacto[0]:
             nueva_profesion = input("Cambia su profesión a: ")
             contacto[4] = nueva_profesion
-    input("Presiona enter para continuar...")
+            print(f"Profesión de {nombre_contac} cambiada a '{nueva_profesion}'.")
+            return
+        else:
+            print(f"No se encontró un contacto con el nombre {nombre_contac}.")
+    input("Presiona Enter para continuar...")
 
 def main():
     agenda = []
