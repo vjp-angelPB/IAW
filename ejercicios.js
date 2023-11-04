@@ -169,11 +169,12 @@ d) ¿Qué pasa si en los apartados b) y c) hay más de un mes con el mismo núme
 
 //a 
 function calcularPromedioHoras() {
-    horas_estudio=["36","20","42","18","12","11","18","13","13","25","48",]
+    horas_estudio = ["30","25","40","35","20","15","30","35","40","35","25","30"];
     for (i=0;i<horas_estudio.length; i++){
-        console.log(horas_estudio[i],":", (horas_estudio/12)," h")
-
+		let total_horas_estudio = total_horas_estudio + horas_estudio[i];
     }
+	let promedio_horas_estudio = total_horas_estudio /12
+	console.log("El promedio de horas de estudio en el año es: " + promedio_horas_estudio);
 }
 
 
