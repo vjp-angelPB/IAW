@@ -188,7 +188,7 @@ function calcularPromedioHoras() {
 
 
 
-
+/* EJERCICIO DE CLASE */
 
 /*
 * Función que trnasforma las palabras de una cadena de caracteres pasando su primer caracter a mayúsculas.
