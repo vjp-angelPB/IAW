@@ -167,15 +167,124 @@ MARZO: 22.2 h
 d) ¿Qué pasa si en los apartados b) y c) hay más de un mes con el mismo número de horas?
 */
 
-//a 
+//a   NO FUNCIONA "REVISAR"
 function calcularPromedioHoras() {
-    horas_estudio = ["30","25","40","35","20","15","30","35","40","35","25","30"];
-    for (i=0;i<horas_estudio.length; i++){
-		let total_horas_estudio = total_horas_estudio + horas_estudio[i];
+    horas_estudio = [30, 25, 40, 35, 20, 15, 30, 35, 40, 35, 25, 30];
+
+	// Inicio total horas de estudio 
+	let total_horas = 0;
+
+	// Iterar a través del array para las horas de estudio
+    for (let i=0; i<horas_estudio.length; i++){
+		total_horas = total_horas + horas_estudio[i];
     }
-	let promedio_horas_estudio = total_horas_estudio /12
-	console.log("El promedio de horas de estudio en el año es: " + promedio_horas_estudio);
+	promedio_horas = total_horas /12
+	console.log("El promedio de horas de estudio en el año es: " + promedio_horas);
 }
+
+
+// b
+
+function calcularMesMayorHorasEstudio(){
+	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
+
+	// Inicio las variables para el mes con más horas de estudio y el máximo de horas
+	let mesMaxHoras = 0;
+	let maxHoras = horasDeEstudio[0];
+
+	// Iterar a través del array para encontrar el mes con más horas de estudio
+	for (let i = 1; i < horasDeEstudio.length; i++) {
+		if (horasDeEstudio[i] > maxHoras) 
+		{
+			maxHoras = horasDeEstudio[i]; // máximo de horas dentro del array
+			mesMaxHoras = i; //Posición con el mes máximo de horas
+		}
+	}
+
+	// Sumamos 1 para tener el mes real porque empieza desde la posición 0
+	let mesConMasHoras = mesMaxHoras + 1;
+
+	console.log("El mes con más horas de estudio es el mes " + mesConMasHoras + " con " + maxHoras + " horas de estudio.");
+}
+
+// c
+
+function calcularMesMayorHorasEstudio(){
+	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
+
+	// Inicio las variables para el mes con más horas de estudio y el máximo de horas
+	let mesMinHoras = 0;
+	let MinHoras = horasDeEstudio[0];
+
+	// Iterar a través del array para encontrar el mes con más horas de estudio
+	for (let i = 1; i < horasDeEstudio.length; i++) {
+		if (horasDeEstudio[i] < MinHoras) 
+		{
+			MinHoras = horasDeEstudio[i]; // máximo de horas dentro del array
+			mesMinHoras = i; //Posición con el mes máximo de horas
+		}
+	}
+
+	// Sumamos 1 para tener el mes real porque empieza desde la posición 0
+	let mesConMenosHoras = mesMinHoras + 1;
+
+	console.log("El mes con más horas de estudio es el mes " + mesConMenosHoras + " con " + MinHoras + " horas de estudio.");
+}
+
+// d
+
+function mostrarArraydiferente(){
+	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
+	console.log("HORAS DE ESTUDIO: ");
+	// Iterar a través del array para las horas de estudio
+    for (let i=0; i<horasDeEstudio.length; i++){
+		msg="";
+		switch (i){
+			case 0:{
+				msg="ENERO: "
+			}
+			case 1:{
+				msg="FEBRERO: "
+			}
+			case 2:{
+				msg="MARZO: "
+			}
+			case 3:{
+				msg="ABRIL: "
+			}
+			case 4:{
+				msg="MAYO: "
+			}
+			case 5:{
+				msg="JUNIO: "
+			}
+			case 6:{
+				msg="JULIO: "
+			}
+			case 7:{
+				msg="AGOSTO: "
+			}
+			case 8:{
+				msg="SEPTIEMBRE: "
+			}
+			case 9:{
+				msg="OCTUBRE: "
+			}
+			case 10:{
+				msg="NOVIEMBRE: "
+			}
+			case 11:{
+				msg="DICIEMBRE: "
+			}
+		}
+		console.log(msg + horasDeEstudio[i] + " h");
+    }	
+}
+
+
+
+
+
 
 
 
