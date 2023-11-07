@@ -10,27 +10,23 @@ Cualquier otro fruto se considerará que es de Otoño.
 */
 
 function frutos(fruto){
-	
 	if ((fruto=="Manzana") || (fruto == "naranja")) {
 		console.log("Es de la temporada de Invierno");
 	}
-	
 	else if ((fruto == "fresa") || (fruto == "cereza")) {
 		console.log("Es de la temporada de Primavera");
 	}
-	
 	else if (fruto == "melocotón") {
 		console.log("Es de la temporada de Verano");
 	}
-	
 	else {
 		console.log("Es de la temporada de Otoño");
 	}
 }
-
 //Para comprobar: frutos("cereza");
 
 
+/* **************************************************************** */
 /* 2.- Escribir una función JavaScript que reciba tres parámetros que representan el tipo de carretera, la velocidad de un vehículo y la matrícula del vehículo. Dicha función deberá mostrar por pantalla si el vehículo circula dentro de los límites legales según el tipo de carretera.
 Los límites legales que se han de considerar son los siguientes:
 Tipo Carretera - Límite Inferior - Límite Superior
@@ -54,8 +50,6 @@ El vehículo con matrícula {matrícula} circula a una velocidad apropiada para 
 // switch y dentro de cada case un if else
 
 function coche(carretera, velocidad, matricula){
-
-
 //carretera
 //velocidad
 //matricula
@@ -85,7 +79,6 @@ function coche(carretera, velocidad, matricula){
 			}
 		}
 		
-		
 		case "Nacional": {
 			if ((velocidad > 50 ) && (velocidad < 100)){
 				console.log("El vehículo con" + matricula + "circula a una velocidad apropiada para la vía")
@@ -109,7 +102,7 @@ function coche(carretera, velocidad, matricula){
 				console.log("El vehículo con" + matricula + "circula a una velocidad superior a" + 120 + "km/h")
 			}
 		}
-		
+
 		case "Autopista": {
 			if ((velocidad > 60 ) && (velocidad < 120)){
 				console.log("El vehículo con" + matricula + "circula a una velocidad apropiada para la vía")
@@ -121,9 +114,7 @@ function coche(carretera, velocidad, matricula){
 				console.log("El vehículo con" + matricula + "circula a una velocidad superior a" + 120 + "km/h")
 			}
 		}
-
 	}
-
 }
 // Para comprobar: coche("Nacional", 188, "112345k");
 // coche("Autovia", 23, "111111o");
@@ -182,9 +173,7 @@ function calcularPromedioHoras() {
 	console.log("El promedio de horas de estudio en el año es: " + promedio_horas);
 }
 
-
 // b
-
 function calcularMesMayorHorasEstudio(){
 	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
 
@@ -232,7 +221,6 @@ function calcularMesMayorHorasEstudio(){
 }
 
 // d
-
 function mostrarArraydiferente(){
 	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
 	console.log("HORAS DE ESTUDIO: ");
@@ -242,39 +230,51 @@ function mostrarArraydiferente(){
 		switch (i){
 			case 0:{
 				msg="ENERO: "
+				break;
 			}
 			case 1:{
 				msg="FEBRERO: "
+				break;
 			}
 			case 2:{
 				msg="MARZO: "
+				break;
 			}
 			case 3:{
 				msg="ABRIL: "
+				break;
 			}
 			case 4:{
 				msg="MAYO: "
+				break;
 			}
 			case 5:{
 				msg="JUNIO: "
+				break;
 			}
 			case 6:{
 				msg="JULIO: "
+				break;
 			}
 			case 7:{
 				msg="AGOSTO: "
+				break;
 			}
 			case 8:{
 				msg="SEPTIEMBRE: "
+				break;
 			}
 			case 9:{
 				msg="OCTUBRE: "
+				break;
 			}
 			case 10:{
 				msg="NOVIEMBRE: "
+				break;
 			}
 			case 11:{
 				msg="DICIEMBRE: "
+				break;
 			}
 		}
 		console.log(msg + horasDeEstudio[i] + " h");
@@ -282,7 +282,152 @@ function mostrarArraydiferente(){
 }
 
 
+/* 5.- Si el orden de los 10 primeros pilotos de la F1 en la temporada 22-23 fue:
+Verstappen, Hamilton, Alonso, Sainz, Norris, Leclerc, Russell, Piastri, Gasly, Stroll
+a) Almacenar los pilotos en un array según el orden indicado.
+b) Muestra por pantalla los pilotos según la posición en la que terminaron la temporada.
+c) Escribe el listado de pilotos al revés.
+*/
 
+// a
+// b
+function ordenarpilotos(){ 
+	ordenpilotos = ["Verstappen","Hamilton","Alonso","Norris","Leclerc","Russell","Piastri","Gasly","Stroll"]
+ 
+	for (let i=0; i<ordenpilotos.length; i++){
+		posicion = i;
+		console.log("Piloto " + i + ": " + ordenpilotos[i]);
+	}
+}
+
+// c
+function pilotosreverso() {
+	ordenpilotos = ["Verstappen","Hamilton","Alonso","Norris","Leclerc","Russell","Piastri","Gasly","Stroll"]
+	for (let i=ordenpilotos.length - 1; i>=0; i--){
+		console.log(ordenpilotos[i]);
+	}
+}
+
+
+/* 6.- Si la clasificación para uno de los grandes premios de la temporada fue la siguiente:
+Línea 1:
+Alonso, 
+Sainz,
+Línea 2:
+Hamilton,
+Leclerc,
+Linea 3:
+Bottas,
+Russell,
+
+y partimos de un array que almacena la parrilla de esta forma [Alonso, Sainz, Hamilton, Leclerc, Bottas,  Russell] --Es decir, cada 2 pilotos tendremos una línea completa de la parrilla --
+
+Procesa el array para que la salida sea la que se indica a continuación:
+Línea 1:
+Alonso, 
+Sainz [La coma que había aquí desaparece]
+[Línea en blanco]
+Línea 2:
+Hamilton,
+Leclerc[La coma que había aquí desaparece]
+[Línea en blanco]
+Linea 3:
+Bottas,
+Russell 
+[La coma que había aquí desaparece]
+*/
+function premios(){
+	parrilla = ["Alonso", "Sainz", "Hamilton", "Leclerc", "Bottas",  "Russell"]
+
+	linea = 0;
+	for (let i = 0; i < parrilla.length; i+=2) {
+		piloto1 = parrilla[i];
+		piloto2 = parrilla[i + 1];
+		linea ++;
+		
+		console.log("Línea "+linea+":")
+		console.log(piloto1);
+		console.log(piloto2);
+		console.log("");
+	}
+}
+
+
+/* 7.- Partiendo de la clasificación del ejercicio anterior, debes hacer que los pilotos de una línea de la parrilla se muestren uno a continuación del otro en el mismo renglón.
+
+Línea 1: Alonso, Sainz
+Línea 2: Hamilton, Leclerc
+Línea 3: Bottas, Russell
+*/
+function clasificacion(){
+	parrilla = ["Alonso", "Sainz", "Hamilton", "Leclerc", "Bottas",  "Russell"]
+
+	linea = 0;
+	for (let i = 0; i < parrilla.length; i+=2) {
+		piloto1 = parrilla[i];
+		piloto2 = parrilla[i + 1];
+		linea ++;
+		// Imprime el nombre de los dos pilotos en la misma línea
+		console.log("Línea " + linea + ": " + piloto1, piloto2);
+	}
+}
+
+
+/* 8.- Plantea una solución para las siguientes tareas propuestas:
+a) Debes crear un array bidimensional para los módulos del ciclo de ASIR. La primera dimensión del array serán los módulos del primer curso. La segunda dimensión serán los módulos del segundo curso.
+b) Debes crear un array bidimensional para almacenar las notas de los módulos del ciclo de ASIR de tal manera que exista una correspondencia en las posiciones de los módulos y sus notas, es decir: si el módulo IAW está localizado en la segunda posición del vector del segundo curso, la nota del módulo que corresponda a IAW debe también ocupar la misma posición en el vector de notas.
+c) Procesar los dos arrays bidimensionales anteriores para mostrar la información de la siguiente forma:
+
+Notas en el ciclo de ASIR del alumno XXXXXX:
+Primer curso:
+LMSGI: 7,5; ABD: 8.0; ...
+Segundo curso:
+IAW: 8.5; ....
+
+MEJORA: ¿Sabrías calcular el promedio de notas por curso? ¿y el promedio de todo el curso? Muestra tres líneas adicionales después del listado de módulos y notas en las que se indiquen el promedio de notas por curso y la nota promedio de todo el ciclo como se indica a continuación:
+
+Promedio notas primer curso: 8.33
+Promedio notas segundo curso 2: 7.89
+nota promedio ciclo: 8,11
+*/
+
+// a b y c
+function asir(){
+	// Creo el array bidimensional para los módulos
+	modulosAsir = [["ISO","LMSGI","GBD","FOL","PARE","FHW"], ["SAD","EIE","ASGBD","ASO","SRI","IAW"]];
+
+	// Creo el array bidimensional para las notas
+	notasAsir = [[8,7,9,8,8,9], [8,8,7,9,8,7]];
+
+	/*
+	for (let i=0; i<notasAsir.length; i++){
+		if ()
+		for (let j=0; j<modulosAsir[i].length; j++){
+			console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco"); 
+			console.log("Primer curso:"); 
+			console.log(""); 
+			console.log("Segundo curso:"); 
+			console.log("");
+		}
+	}
+	*/
+	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco");
+	
+	for (let curso = 0; curso < modulosASIR.length; curso++) {
+		if (curso === 0) {
+			console.log("Primer curso:");
+		} 
+		else {
+			console.log("Segundo curso:");
+		}
+	
+		for (let i = 0; i < modulosASIR[curso].length; i++) {
+			modulo = modulosASIR[curso][i];
+			nota = notasASIR[curso][i];
+			console.log(modulo,nota);
+		}
+	}
+}
 
 
 
