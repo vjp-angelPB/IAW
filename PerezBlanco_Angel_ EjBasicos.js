@@ -26,7 +26,6 @@ function frutos(fruto) {
 //Para comprobar: frutos("cereza");
 
 
-/* **************************************************************** */
 /* 2.- Escribir una función JavaScript que reciba tres parámetros que representan el tipo de carretera, la velocidad de un vehículo y la matrícula del vehículo. Dicha función deberá mostrar por pantalla si el vehículo circula dentro de los límites legales según el tipo de carretera.
 Los límites legales que se han de considerar son los siguientes:
 Tipo Carretera - Límite Inferior - Límite Superior
@@ -46,7 +45,6 @@ El vehículo con matrícula {matrícula} circula a una velocidad superior a {vel
 Si el vehículo circula dentro de los límites legales para la vía, el mensaje a mostrar será:
 El vehículo con matrícula {matrícula} circula a una velocidad apropiada para la vía
 */
-
 // switch y dentro de cada case un if else
 
 function coche(carretera, velocidad, matricula) {
@@ -196,7 +194,6 @@ function calcularMesMayorHorasEstudio() {
 }
 
 // c
-
 function calcularMesMayorHorasEstudio() {
 	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
 
@@ -289,8 +286,7 @@ b) Muestra por pantalla los pilotos según la posición en la que terminaron la 
 c) Escribe el listado de pilotos al revés.
 */
 
-// a
-// b
+// a y b
 function ordenarpilotos() {
 	// Creo el array de la parrilla
 	ordenpilotos = ["Verstappen", "Hamilton", "Alonso", "Norris", "Leclerc", "Russell", "Piastri", "Gasly", "Stroll"]
@@ -450,6 +446,11 @@ function asir() {
 }
 
 
+/* 9.- Implementar un algoritmo que dada la frase "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red" la convierta a la frase:
+"Implantación de Aplicaciones Web es un Módulo del segundo curso del ciclo de ASIR".
+
+NOTA ejercicio 9: La solución se debe realizar procesando la frase original y, en ningún caso, creando una nueva cadena de caracteres que contenga la frase deseada.
+*/
 
 
 
