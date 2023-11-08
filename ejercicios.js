@@ -9,8 +9,8 @@ Melocoton - Verano
 Cualquier otro fruto se considerará que es de Otoño.
 */
 
-function frutos(fruto){
-	if ((fruto=="Manzana") || (fruto == "naranja")) {
+function frutos(fruto) {
+	if ((fruto == "Manzana") || (fruto == "naranja")) {
 		console.log("Es de la temporada de Invierno");
 	}
 	else if ((fruto == "fresa") || (fruto == "cereza")) {
@@ -49,53 +49,53 @@ El vehículo con matrícula {matrícula} circula a una velocidad apropiada para 
 
 // switch y dentro de cada case un if else
 
-function coche(carretera, velocidad, matricula){
-//carretera
-//velocidad
-//matricula
-	switch(carretera){
-		
+function coche(carretera, velocidad, matricula) {
+	//carretera
+	//velocidad
+	//matricula
+	switch (carretera) {
+
 		case "Urbana": {
-			if ((velocidad > 0 ) && (velocidad < 30)){
+			if ((velocidad > 0) && (velocidad < 30)) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad apropiada para la vía")
 			}
-			else if (velocidad < 0 ) {
+			else if (velocidad < 0) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad inferior a" + 0 + "km/h")
 			}
 			else if (velocidad > 30) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad superior a" + 30 + "km/h")
 			}
 		}
-		
+
 		case "Comarcal": {
-			if ((velocidad > 45 ) && (velocidad < 90)){
+			if ((velocidad > 45) && (velocidad < 90)) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad apropiada para la vía")
 			}
-			else if (velocidad < 45 ) {
+			else if (velocidad < 45) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad inferior a" + 45 + "km/h")
 			}
 			else if (velocidad > 90) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad superior a" + 90 + "km/h")
 			}
 		}
-		
+
 		case "Nacional": {
-			if ((velocidad > 50 ) && (velocidad < 100)){
+			if ((velocidad > 50) && (velocidad < 100)) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad apropiada para la vía")
 			}
-			else if (velocidad < 50 ) {
+			else if (velocidad < 50) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad inferior a" + 50 + "km/h")
 			}
 			else if (velocidad > 100) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad superior a" + 100 + "km/h")
 			}
 		}
-		
+
 		case "Autovia": {
-			if ((velocidad > 60 ) && (velocidad < 120)){
+			if ((velocidad > 60) && (velocidad < 120)) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad apropiada para la vía")
 			}
-			else if (velocidad < 60 ) {
+			else if (velocidad < 60) {
 				console.log("El vehículo con " + matricula + "circula a una velocidad inferior a" + 60 + "km/h")
 			}
 			else if (velocidad > 120) {
@@ -104,10 +104,10 @@ function coche(carretera, velocidad, matricula){
 		}
 
 		case "Autopista": {
-			if ((velocidad > 60 ) && (velocidad < 120)){
+			if ((velocidad > 60) && (velocidad < 120)) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad apropiada para la vía")
 			}
-			else if (velocidad < 60 ) {
+			else if (velocidad < 60) {
 				console.log("El vehículo con" + matricula + "circula a una velocidad inferior a" + 60 + "km/h")
 			}
 			else if (velocidad > 120) {
@@ -127,22 +127,22 @@ b) muestre los meses separados por comas en una única línea.
 */
 
 // a
-function mostrar_mesesaño(){
-    meses_del_ano=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-    
-    for (let i=0; i<meses_del_ano.length; i++){
-        console.log(meses_del_ano[i]);
-    }
+function mostrar_mesesaño() {
+	meses_del_ano = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+
+	for (let i = 0; i < meses_del_ano.length; i++) {
+		console.log(meses_del_ano[i]);
+	}
 }
 
 // b 
-function mostrar_mesesaño_linea(){
-    meses_del_ano=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-    let j = "";
-    for (let i=0; i<meses_del_ano.length; i++){
-        j= j + meses_del_ano[i] + ", ";
-    }
-    console.log(j);
+function mostrar_mesesaño_linea() {
+	meses_del_ano = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+	let j = "";
+	for (let i = 0; i < meses_del_ano.length; i++) {
+		j = j + meses_del_ano[i] + ", ";
+	}
+	console.log(j);
 }
 
 /* 4.- En un array de doce posiciones que almacenarán el número de horas de estudio de un alumno de ASIR en un mes, se pide:
@@ -160,21 +160,21 @@ d) ¿Qué pasa si en los apartados b) y c) hay más de un mes con el mismo núme
 
 //a   NO FUNCIONA "REVISAR"
 function calcularPromedioHoras() {
-    horas_estudio = [30, 25, 40, 35, 20, 15, 30, 35, 40, 35, 25, 30];
+	horas_estudio = [30, 25, 40, 35, 20, 15, 30, 35, 40, 35, 25, 30];
 
 	// Inicio total horas de estudio 
 	let total_horas = 0;
 
 	// Iterar a través del array para las horas de estudio
-    for (let i=0; i<horas_estudio.length; i++){
+	for (let i = 0; i < horas_estudio.length; i++) {
 		total_horas = total_horas + horas_estudio[i];
-    }
-	promedio_horas = total_horas /12
+	}
+	promedio_horas = total_horas / 12
 	console.log("El promedio de horas de estudio en el año es: " + promedio_horas);
 }
 
 // b
-function calcularMesMayorHorasEstudio(){
+function calcularMesMayorHorasEstudio() {
 	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
 
 	// Inicio las variables para el mes con más horas de estudio y el máximo de horas
@@ -183,8 +183,7 @@ function calcularMesMayorHorasEstudio(){
 
 	// Iterar a través del array para encontrar el mes con más horas de estudio
 	for (let i = 1; i < horasDeEstudio.length; i++) {
-		if (horasDeEstudio[i] > maxHoras) 
-		{
+		if (horasDeEstudio[i] > maxHoras) {
 			maxHoras = horasDeEstudio[i]; // máximo de horas dentro del array
 			mesMaxHoras = i; //Posición con el mes máximo de horas
 		}
@@ -198,7 +197,7 @@ function calcularMesMayorHorasEstudio(){
 
 // c
 
-function calcularMesMayorHorasEstudio(){
+function calcularMesMayorHorasEstudio() {
 	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
 
 	// Inicio las variables para el mes con más horas de estudio y el máximo de horas
@@ -207,8 +206,7 @@ function calcularMesMayorHorasEstudio(){
 
 	// Iterar a través del array para encontrar el mes con más horas de estudio
 	for (let i = 1; i < horasDeEstudio.length; i++) {
-		if (horasDeEstudio[i] < MinHoras) 
-		{
+		if (horasDeEstudio[i] < MinHoras) {
 			MinHoras = horasDeEstudio[i]; // máximo de horas dentro del array
 			mesMinHoras = i; //Posición con el mes máximo de horas
 		}
@@ -221,64 +219,66 @@ function calcularMesMayorHorasEstudio(){
 }
 
 // d
-function mostrarArraydiferente(){
+function mostrarArraydiferente() {
 	horasDeEstudio = [50, 60, 45, 70, 80, 90, 75, 65, 55, 100, 110, 95];
 	console.log("HORAS DE ESTUDIO: ");
 	// Iterar a través del array para las horas de estudio
-    for (let i=0; i<horasDeEstudio.length; i++){
-		msg="";
-		switch (i){
-			case 0:{
-				msg="ENERO: "
+	for (let i = 0; i < horasDeEstudio.length; i++) {
+		msg = "";
+		// Creo un switch para cada mes del año
+		switch (i) {
+			case 0: {
+				msg = "ENERO: "
 				break;
 			}
-			case 1:{
-				msg="FEBRERO: "
+			case 1: {
+				msg = "FEBRERO: "
 				break;
 			}
-			case 2:{
-				msg="MARZO: "
+			case 2: {
+				msg = "MARZO: "
 				break;
 			}
-			case 3:{
-				msg="ABRIL: "
+			case 3: {
+				msg = "ABRIL: "
 				break;
 			}
-			case 4:{
-				msg="MAYO: "
+			case 4: {
+				msg = "MAYO: "
 				break;
 			}
-			case 5:{
-				msg="JUNIO: "
+			case 5: {
+				msg = "JUNIO: "
 				break;
 			}
-			case 6:{
-				msg="JULIO: "
+			case 6: {
+				msg = "JULIO: "
 				break;
 			}
-			case 7:{
-				msg="AGOSTO: "
+			case 7: {
+				msg = "AGOSTO: "
 				break;
 			}
-			case 8:{
-				msg="SEPTIEMBRE: "
+			case 8: {
+				msg = "SEPTIEMBRE: "
 				break;
 			}
-			case 9:{
-				msg="OCTUBRE: "
+			case 9: {
+				msg = "OCTUBRE: "
 				break;
 			}
-			case 10:{
-				msg="NOVIEMBRE: "
+			case 10: {
+				msg = "NOVIEMBRE: "
 				break;
 			}
-			case 11:{
-				msg="DICIEMBRE: "
+			case 11: {
+				msg = "DICIEMBRE: "
 				break;
 			}
 		}
+		// Muestro por pantalla el mensaje de cada mes, más el numero de horas
 		console.log(msg + horasDeEstudio[i] + " h");
-    }	
+	}
 }
 
 
@@ -291,10 +291,12 @@ c) Escribe el listado de pilotos al revés.
 
 // a
 // b
-function ordenarpilotos(){ 
-	ordenpilotos = ["Verstappen","Hamilton","Alonso","Norris","Leclerc","Russell","Piastri","Gasly","Stroll"]
- 
-	for (let i=0; i<ordenpilotos.length; i++){
+function ordenarpilotos() {
+	// Creo el array de la parrilla
+	ordenpilotos = ["Verstappen", "Hamilton", "Alonso", "Norris", "Leclerc", "Russell", "Piastri", "Gasly", "Stroll"]
+
+	// Creo el for para que recorra el array y muestre los pilotos
+	for (let i = 0; i < ordenpilotos.length; i++) {
 		posicion = i;
 		console.log("Piloto " + i + ": " + ordenpilotos[i]);
 	}
@@ -302,8 +304,11 @@ function ordenarpilotos(){
 
 // c
 function pilotosreverso() {
-	ordenpilotos = ["Verstappen","Hamilton","Alonso","Norris","Leclerc","Russell","Piastri","Gasly","Stroll"]
-	for (let i=ordenpilotos.length - 1; i>=0; i--){
+	// Creo el array de la parrilla
+	ordenpilotos = ["Verstappen", "Hamilton", "Alonso", "Norris", "Leclerc", "Russell", "Piastri", "Gasly", "Stroll"]
+	
+	// Creo el for para que los recorra pero a la inversa diciendo que i tiene que ser mayor que 0 y que le vaya restando 1 cada vez.
+	for (let i = ordenpilotos.length - 1; i >= 0; i--) {
 		console.log(ordenpilotos[i]);
 	}
 }
@@ -336,16 +341,21 @@ Bottas,
 Russell 
 [La coma que había aquí desaparece]
 */
-function premios(){
-	parrilla = ["Alonso", "Sainz", "Hamilton", "Leclerc", "Bottas",  "Russell"]
+function premios() {
+	// Creo la parrilla
+	parrilla = ["Alonso", "Sainz", "Hamilton", "Leclerc", "Bottas", "Russell"]
 
+	// Igualo la var linea a 0
 	linea = 0;
-	for (let i = 0; i < parrilla.length; i+=2) {
+
+	// Recorro el array con un for 
+	for (let i = 0; i < parrilla.length; i += 2) {
 		piloto1 = parrilla[i];
 		piloto2 = parrilla[i + 1];
-		linea ++;
-		
-		console.log("Línea "+linea+":")
+		linea++;
+
+		// Sumo 1 a la línea y al piloto 2 y muestro por pantalla los pilotos agrupados de 2 en 2
+		console.log("Línea " + linea + ":")
 		console.log(piloto1);
 		console.log(piloto2);
 		console.log("");
@@ -359,14 +369,21 @@ Línea 1: Alonso, Sainz
 Línea 2: Hamilton, Leclerc
 Línea 3: Bottas, Russell
 */
-function clasificacion(){
-	parrilla = ["Alonso", "Sainz", "Hamilton", "Leclerc", "Bottas",  "Russell"]
+function clasificacion() {
+	// Creo la parrilla
+	parrilla = ["Alonso", "Sainz", "Hamilton", "Leclerc", "Bottas", "Russell"]
 
+	// Igualo la var linea a 0
 	linea = 0;
-	for (let i = 0; i < parrilla.length; i+=2) {
+
+	// Itero por cada dos pilotos de la parrilla
+	for (let i = 0; i < parrilla.length; i += 2) {
 		piloto1 = parrilla[i];
 		piloto2 = parrilla[i + 1];
-		linea ++;
+
+		//Le sumo uno a cada línea para que vaya de uno a uno
+		linea++;
+
 		// Imprime el nombre de los dos pilotos en la misma línea
 		console.log("Línea " + linea + ": " + piloto1, piloto2);
 	}
@@ -392,12 +409,12 @@ nota promedio ciclo: 8,11
 */
 
 // a b y c
-function asir(){
+function asir() {
 	// Creo el array bidimensional para los módulos
-	modulosAsir = [["ISO","LMSGI","GBD","FOL","PARE","FHW"], ["SAD","EIE","ASGBD","ASO","SRI","IAW"]];
+	modulosAsir = [["ISO", "LMSGI", "GBD", "FOL", "PARE", "FHW"], ["SAD", "EIE", "ASGBD", "ASO", "SRI", "IAW"]];
 
 	// Creo el array bidimensional para las notas
-	notasAsir = [[8,7,9,8,8,9], [8,8,7,9,8,7]];
+	notasAsir = [[8, 7, 9, 8, 8, 9], [8, 8, 7, 9, 8, 7]];
 
 	/*
 	for (let i=0; i<notasAsir.length; i++){
@@ -411,20 +428,23 @@ function asir(){
 		}
 	}
 	*/
+
+	// Muestro por pantalla el nombre del alumno
 	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco");
-	
+
+	// Hago un bucle para tratar los cursos por separado
 	for (let curso = 0; curso < modulosASIR.length; curso++) {
 		if (curso === 0) {
 			console.log("Primer curso:");
-		} 
+		}
 		else {
 			console.log("Segundo curso:");
 		}
-	
+		// Hago un bucle para emparejar cada nota y cada módulo con el curso
 		for (let i = 0; i < modulosASIR[curso].length; i++) {
 			modulo = modulosASIR[curso][i];
 			nota = notasASIR[curso][i];
-			console.log(modulo,nota);
+			console.log(modulo + ": " + nota + ";");
 		}
 	}
 }
@@ -442,34 +462,34 @@ function asir(){
 
 
 
-/* EJERCICIO DE CLASE */
+/* EJERCICIO DE CLASE "9" */
 
 /*
 * Función que trnasforma las palabras de una cadena de caracteres pasando su primer caracter a mayúsculas.
 * Pej: "uno dos catorce" pasará a "Uno Dos Catorce"
 */
-function transformarCadena(cadena){
-    let cadenaRetorno; // Contendrá la cadena de entreda con la inicial de todas sus palabar en mayúscula.
-    let vCadena=cadena.split(" "); // Generación de un array de palabras. Pej: Si partimos de la cadena "uno dos catorce" el array que se conseguiría es: ["uno", "dos", "catorce"]
-    for(let i=0; i<vCadena.length; i++){  // Iteramos en cada una de las posiciones del array
-        // Tratamiento de la palabra
-        vCadena[i]=transformarPalabra(vCadena[i]); // Guardamos la palabra actual ya con el primer caracter en mayúscula
-    }
+function transformarCadena(cadena) {
+	let cadenaRetorno; // Contendrá la cadena de entreda con la inicial de todas sus palabar en mayúscula.
+	let vCadena = cadena.split(" "); // Generación de un array de palabras. Pej: Si partimos de la cadena "uno dos catorce" el array que se conseguiría es: ["uno", "dos", "catorce"]
+	for (let i = 0; i < vCadena.length; i++) {  // Iteramos en cada una de las posiciones del array
+		// Tratamiento de la palabra
+		vCadena[i] = transformarPalabra(vCadena[i]); // Guardamos la palabra actual ya con el primer caracter en mayúscula
+	}
 
-    cadenaRetorno=vCadena.toString().replaceAll(",", " "); // Convertimos de array a String reemplazando las comas que mete el toString por espacios en blanco
-    return cadenaRetorno;
+	cadenaRetorno = vCadena.toString().replaceAll(",", " "); // Convertimos de array a String reemplazando las comas que mete el toString por espacios en blanco
+	return cadenaRetorno;
 }
 
 /*
 * Función que transforma una palabra que le llega por parámetro.
 * La transformación consiste en pasar el primer caracter a mayúsculas
 */
-function transformarPalabra(palabra){
-    // Tratamiento de la palabra actual
-    let vPalabraActual=palabra.split(""); // Vector con los caracteres de la palabra actual. Pej: de "uno" su vector será: ["u", "n", "o"]
-    vPalabraActual[0]=vPalabraActual[0].toUpperCase(); // Convertimos a mayúsculas el primer caracter de la palabra actual
-    palabra=vPalabraActual.toString().replaceAll(",",""); // Convertimos de array a String eliminando las comas que aparecen en el toString
-    return palabra;
+function transformarPalabra(palabra) {
+	// Tratamiento de la palabra actual
+	let vPalabraActual = palabra.split(""); // Vector con los caracteres de la palabra actual. Pej: de "uno" su vector será: ["u", "n", "o"]
+	vPalabraActual[0] = vPalabraActual[0].toUpperCase(); // Convertimos a mayúsculas el primer caracter de la palabra actual
+	palabra = vPalabraActual.toString().replaceAll(",", ""); // Convertimos de array a String eliminando las comas que aparecen en el toString
+	return palabra;
 }
 
 
