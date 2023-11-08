@@ -426,8 +426,13 @@ function asir() {
 	*/
 
 	// Muestro por pantalla el nombre del alumno
-	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco");
+	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
 
+/*
+for de modulos[i]
+	for de j modulos[i].lenght
+	arraymodulos[i][j] + arranotas[i][j]
+*/
 	// Hago un bucle para tratar los cursos por separado
 	for (let curso = 0; curso < modulosASIR.length; curso++) {
 		if (curso === 0) {
