@@ -412,43 +412,23 @@ function asir() {
 	// Creo el array bidimensional para las notas
 	notasAsir = [[8, 7, 9, 8, 8, 9], [8, 8, 7, 9, 8, 7]];
 
-	/*
-	for (let i=0; i<notasAsir.length; i++){
-		if ()
-		for (let j=0; j<modulosAsir[i].length; j++){
-			console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco"); 
-			console.log("Primer curso:"); 
-			console.log(""); 
-			console.log("Segundo curso:"); 
-			console.log("");
-		}
-	}
-	*/
-
 	// Muestro por pantalla el nombre del alumno
 	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
+
+	// Itero por cada curso
+	for (let i = 0; i < modulosAsir.length; i++) {
+		for (let j = 0; j < modulosAsir[i].length; j++) {
+			// Mostramos el nombre del módulo y su nota correspondiente
+			console.log(modulosAsir[i][j] + ": " + notasAsir[i][j] + ";");
+		}
+	}
+}
 
 /*
 for de modulos[i]
 	for de j modulos[i].lenght
 	arraymodulos[i][j] + arranotas[i][j]
 */
-	// Hago un bucle para tratar los cursos por separado
-	for (let curso = 0; curso < modulosASIR.length; curso++) {
-		if (curso === 0) {
-			console.log("Primer curso:");
-		}
-		else {
-			console.log("Segundo curso:");
-		}
-		// Hago un bucle para emparejar cada nota y cada módulo con el curso
-		for (let i = 0; i < modulosASIR[curso].length; i++) {
-			modulo = modulosASIR[curso][i];
-			nota = notasASIR[curso][i];
-			console.log(modulo + ": " + nota + ";");
-		}
-	}
-}
 
 
 /* 9.- Implementar un algoritmo que dada la frase "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red" la convierta a la frase:
