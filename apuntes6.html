@@ -19,7 +19,18 @@
         function validarDireccion(){
             let valorRetorno=true;
             let contenidoDireccion=document.getElementById("direccion").value;
-            if ((contenidoDireccion.lenght < 5) || (contenidoDireccion.lenght >= 20)){
+            if ((contenidoDireccion.length < 5) || (contenidoDireccion.length >= 20)){
+                valorRetorno=false;
+            }
+
+            return valorRetorno;
+        }
+
+        function validarTelefono(){
+            let valorRetorno=true;
+            let contenidoTelefono = document.getElementById("telefono").value;
+            const patronTlf=/^[6789]\d{8}$/;
+            if (patronTlf.test(contenidoTelefono)==false){
                 valorRetorno=false;
             }
 
@@ -29,6 +40,9 @@
         function validarFormulario(){
             if (validarDireccion()==false){
                 alert("La dirección introducida es incorrecta.")
+            }
+            if (validarTelefono()==false){
+                alert("El número de teléfono introducido es incorrecto.");
             }
 
         }
