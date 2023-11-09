@@ -430,21 +430,50 @@ for de modulos[i]
 	arraymodulos[i][j] + arranotas[i][j]
 */
 
+/*
+function ASIR() {
+  	// Definir un array bidimensional para módulos y notas
+  	modulosYNotas = [
+    ["ISO", 8, "LMSGI", 7, "GBD", 9, "FOL", 8, "PARE", 8, "FHW", 9],
+    ["SAD", 8, "EIE", 8, "ASGBD", 7, "ASO", 9, "SRI", 8, "IAW", 7]
+  	];
+
+	// Muestro por pantalla el nombre del alumno
+	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
+
+ 	// Itera por cada curso
+  	for (let i = 0; i < modulosYNotas.length; i++) {
+		if (i == 0) {
+		console.log("Primer curso:");
+		} 
+		else {
+		console.log("Segundo curso:");
+		}
+
+    	// Itera por cada módulo y nota y muestra la información
+    for (let j = 0; j < modulosYNotas[i].length; j += 2) {
+      console.log(modulosYNotas[i][j], modulosYNotas[i][j + 1]);
+    }
+  }
+}
+*/
+
+
 
 /* 9.- Implementar un algoritmo que dada la frase "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red" la convierta a la frase:
 "Implantación de Aplicaciones Web es un Módulo del segundo curso del ciclo de ASIR".
 
 NOTA ejercicio 9: La solución se debe realizar procesando la frase original y, en ningún caso, creando una nueva cadena de caracteres que contenga la frase deseada.
 */
+function tranformar_mayusculas(){
+	let cadena=["implantación", "de", "aplicaciones", "web", "es", "un", "módulo", "del", "segundo", "curso", "del", "ciclo", "administración", "de" , "sistemas", "informáticos", "en", "red"];
 
-
-
-
-
-
-
-
-
+	for (let i=0; i < cadena.length; i++){
+		cadena[i]=cadena[i].toUpperCase();
+	}
+	console.log(cadena);
+	
+}
 
 
 
@@ -455,7 +484,7 @@ NOTA ejercicio 9: La solución se debe realizar procesando la frase original y, 
 * Pej: "uno dos catorce" pasará a "Uno Dos Catorce"
 */
 function transformarCadena(cadena) {
-	let cadenaRetorno; // Contendrá la cadena de entreda con la inicial de todas sus palabar en mayúscula.
+	let cadenaRetorno; // Contendrá la cadena de entreda con la inicial de todas sus palabras en mayúscula.
 	let vCadena = cadena.split(" "); // Generación de un array de palabras. Pej: Si partimos de la cadena "uno dos catorce" el array que se conseguiría es: ["uno", "dos", "catorce"]
 	for (let i = 0; i < vCadena.length; i++) {  // Iteramos en cada una de las posiciones del array
 		// Tratamiento de la palabra
@@ -477,10 +506,4 @@ function transformarPalabra(palabra) {
 	palabra = vPalabraActual.toString().replaceAll(",", ""); // Convertimos de array a String eliminando las comas que aparecen en el toString
 	return palabra;
 }
-
-
-
-
-
-
 
