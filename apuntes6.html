@@ -37,6 +37,17 @@
             return valorRetorno;
         }
 
+        function validarDNI(){
+            let valorRetorno=true;
+            let contenidoDni = document.getElementById("dni").value;
+            const patronDni=/^\d{8}[A-Z]|[a-z]$/;
+            if (patronDni.test(contenidoDni)==false){
+                valorRetorno=false;
+            }
+
+            return valorRetorno;
+        }
+
         function validarFormulario(){
             if (validarDireccion()==false){
                 alert("La dirección introducida es incorrecta.")
@@ -44,6 +55,10 @@
             if (validarTelefono()==false){
                 alert("El número de teléfono introducido es incorrecto.");
             }
+            if (validarDNI()==false){
+                alert("El DNI no tiene el formato correcto");
+            }
+            
 
         }
 
