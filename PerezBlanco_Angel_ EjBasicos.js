@@ -405,32 +405,6 @@ nota promedio ciclo: 8,11
 */
 
 // a b y c
-function asir() {
-	// Creo el array bidimensional para los módulos
-	modulosAsir = [["ISO", "LMSGI", "GBD", "FOL", "PARE", "FHW"], ["SAD", "EIE", "ASGBD", "ASO", "SRI", "IAW"]];
-
-	// Creo el array bidimensional para las notas
-	notasAsir = [[8, 7, 9, 8, 8, 9], [8, 8, 7, 9, 8, 7]];
-
-	// Muestro por pantalla el nombre del alumno
-	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
-
-	// Itero por cada curso
-	for (let i = 0; i < modulosAsir.length; i++) {
-		for (let j = 0; j < modulosAsir[i].length; j++) {
-			// Mostramos el nombre del módulo y su nota correspondiente
-			console.log(modulosAsir[i][j] + ": " + notasAsir[i][j] + ";");
-		}
-	}
-}
-
-/*
-for de modulos[i]
-	for de j modulos[i].lenght
-	arraymodulos[i][j] + arranotas[i][j]
-*/
-
-/*
 function ASIR() {
   	// Definir un array bidimensional para módulos y notas
   	modulosYNotas = [
@@ -456,8 +430,12 @@ function ASIR() {
     }
   }
 }
-*/
 
+/*
+for de modulos[i]
+	for de j modulos[i].lenght
+	arraymodulos[i][j] + arranotas[i][j]
+*/
 
 
 /* 9.- Implementar un algoritmo que dada la frase "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red" la convierta a la frase:

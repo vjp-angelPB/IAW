@@ -6,10 +6,35 @@
     <title>Apuntes 6</title>
 </head>
 <body>
-    <label for="direccion">Dirección: </label><input type="text" name="direccion" id="direccion">
-    <label for="telefono">Teléfono: </label><input type="text" name="telefono" id="telefono">
-    <label for="dni">DNI:  </label><input type="text" name="dni" id="dni">
-    <label for="correo">Correo: </label><input type="text" name="correo" id="correo">
+    <form action="" method="get" onsubmit="return validarFormulario()">
+        <label for="direccion">Dirección: </label><input type="text" name="direccion" id="direccion">
+        <label for="telefono">Teléfono: </label><input type="text" name="telefono" id="telefono">
+        <label for="dni">DNI:  </label><input type="text" name="dni" id="dni">
+        <label for="correo">Correo: </label><input type="text" name="correo" id="correo">
+
+        <button type="submit">Enviar formulario</button>
+    </form>
+    
+    <script>
+        function validarDireccion(){
+            let valorRetorno=true;
+            let contenidoDireccion=document.getElementById("direccion").value;
+            if ((contenidoDireccion.lenght < 5) || (contenidoDireccion.lenght >=20)){
+                valorRetorno=false;
+            }
+
+            return valorRetorno;
+        }
+
+        function validarFormulario(){
+            if (validarDireccion()==false){
+                alert("La dirección introducida es incorrecta.")
+            }
+
+        }
+
+
+    </script>
 
 </body>
 </html>
