@@ -405,86 +405,11 @@ nota promedio ciclo: 8,11
 */
 
 // a b y c
-// function asir(){
-// 	modulos = [ ["ISO", "LMSGI", "GBD", "FOL", "PARE", "FHW"], ["SAD", "EIE", "ASGBD", "ASO", "SRI", "IAW"]];
-// 	notas = [ [8, 7, 9, 8, 8, 9], [8, 8, 7, 9, 8, 7]];
-
-// 	// Muestro por pantalla el nombre del alumno
-// 	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
-
-	
-
-// 	for (let i=0; i < modulos.length; i++){
-// 		if (i==0){
-// 			console.log("Primer curso:")
-// 		} else{
-// 			console.log("Segundo curso:")
-// 		}
-
-// 		// creo una variable que almacenara todas las notas y modulos en una sola linea
-// 		let linea = "";
-
-// 		// creo variables para almacenar la nota media de cada curso y la nota media del ciclo entero
-// 		let promedioprimercurso = "";
-// 		let promediosegundocurso =" ";
-// 		let promediociclo = (promedioprimercurso + promediosegundocurso) /2;
-
-// 		for (let j=0; j<modulos[i].length; j++){
-// 			linea += modulos[i][j] + ": " + notas[i][j] + "; ";
-// 		}
-// 		console.log(linea);
-
-// 	}
-// }
-
-
-
-
 /*
 for de modulos[i]
 	for de j modulos[i].lenght
 	arraymodulos[i][j] + arranotas[i][j]
 */
-
-
-/* 9.- Implementar un algoritmo que dada la frase "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red" la convierta a la frase:
-"Implantación de Aplicaciones Web es un Módulo del segundo curso del ciclo de ASIR".
-
-NOTA ejercicio 9: La solución se debe realizar procesando la frase original y, en ningún caso, creando una nueva cadena de caracteres que contenga la frase deseada.
-*/
-// function convertirFrase() {
-// 	let fraseOriginal = "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red";
-  
-// 	let modificaciones = {
-// 	  'implantación': 'Implantación',
-// 	  'aplicaciones': 'de Aplicaciones',
-// 	  'web': 'Web',
-// 	  'es': 'es',
-// 	  'un': 'un',
-// 	  'módulo': 'Módulo',
-// 	  'del': 'del',
-// 	  'segundo': 'segundo',
-// 	  'curso': 'curso',
-// 	  'ciclo': 'ciclo',
-// 	  'administración': 'de ASIR',
-// 	  'de': 'de',
-// 	  'sistemas': 'de',
-// 	  'informáticos': 'ASIR',
-// 	  'en': 'en',
-// 	  'red': ''
-// 	};
-  
-// 	let palabras = fraseOriginal.split(" ");
-  
-// 	for (let i = 0; i < palabras.length; i++) {
-// 	  let palabraActual = palabras[i].toLowerCase();
-// 	  palabras[i] = modificaciones[palabraActual] || palabras[i];
-// 	}
-  
-// 	let fraseConvertida = palabras.join(' ');
-// 	console.log(fraseConvertida);
-// }
- 
 function asir() {
 	// Definir arrays bidimensionales para módulos y notas
 	const modulos = [
@@ -536,7 +461,45 @@ function asir() {
 	console.log("Promedio notas segundo curso: " + promedioSegundoCurso);
 	console.log("Nota promedio ciclo: " + promedioCiclo);
 }
+
+
+/* 9.- Implementar un algoritmo que dada la frase "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red" la convierta a la frase:
+"Implantación de Aplicaciones Web es un Módulo del segundo curso del ciclo de ASIR".
+
+NOTA ejercicio 9: La solución se debe realizar procesando la frase original y, en ningún caso, creando una nueva cadena de caracteres que contenga la frase deseada.
+*/
+// function convertirFrase() {
+// 	let fraseOriginal = "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red";
   
+// 	let modificaciones = {
+// 	  'implantación': 'Implantación',
+// 	  'aplicaciones': 'de Aplicaciones',
+// 	  'web': 'Web',
+// 	  'es': 'es',
+// 	  'un': 'un',
+// 	  'módulo': 'Módulo',
+// 	  'del': 'del',
+// 	  'segundo': 'segundo',
+// 	  'curso': 'curso',
+// 	  'ciclo': 'ciclo',
+// 	  'administración': 'de ASIR',
+// 	  'de': 'de',
+// 	  'sistemas': 'de',
+// 	  'informáticos': 'ASIR',
+// 	  'en': 'en',
+// 	  'red': ''
+// 	};
+  
+// 	let palabras = fraseOriginal.split(" ");
+  
+// 	for (let i = 0; i < palabras.length; i++) {
+// 	  let palabraActual = palabras[i].toLowerCase();
+// 	  palabras[i] = modificaciones[palabraActual] || palabras[i];
+// 	}
+  
+// 	let fraseConvertida = palabras.join(' ');
+// 	console.log(fraseConvertida);
+// }
   
   
   
