@@ -40,9 +40,19 @@
         function validarDNI(){
             let valorRetorno=true;
             let contenidoDni = document.getElementById("dni").value;
+            
+            // validacion del formado del DNI
             const patronDni=/^\d{8}[A-Z]|[a-z]$/;
             if (patronDni.test(contenidoDni)==false){
                 valorRetorno=false;
+            }
+
+            // validacion de la letra del DNI
+            let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+            let letraDNI= letras[contenidoDni.substring(0, 8)%23];
+            if (letraDNI != contenidoDNI.charAt(8)){
+                valorRetorno = false;
             }
 
             return valorRetorno;
