@@ -468,43 +468,26 @@ function asir() {
 
 NOTA ejercicio 9: La solución se debe realizar procesando la frase original y, en ningún caso, creando una nueva cadena de caracteres que contenga la frase deseada.
 */
-// function convertirFrase() {
-// 	let fraseOriginal = "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red";
-  
-// 	let modificaciones = {
-// 	  'implantación': 'Implantación',
-// 	  'aplicaciones': 'de Aplicaciones',
-// 	  'web': 'Web',
-// 	  'es': 'es',
-// 	  'un': 'un',
-// 	  'módulo': 'Módulo',
-// 	  'del': 'del',
-// 	  'segundo': 'segundo',
-// 	  'curso': 'curso',
-// 	  'ciclo': 'ciclo',
-// 	  'administración': 'de ASIR',
-// 	  'de': 'de',
-// 	  'sistemas': 'de',
-// 	  'informáticos': 'ASIR',
-// 	  'en': 'en',
-// 	  'red': ''
-// 	};
-  
-// 	let palabras = fraseOriginal.split(" ");
-  
-// 	for (let i = 0; i < palabras.length; i++) {
-// 	  let palabraActual = palabras[i].toLowerCase();
-// 	  palabras[i] = modificaciones[palabraActual] || palabras[i];
-// 	}
-  
-// 	let fraseConvertida = palabras.join(' ');
-// 	console.log(fraseConvertida);
-// }
-  
-  
+
+function fraseASIR() {
+    let frase = "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red";
+
+    // Reemplazar "aplicaciones web" por "Aplicaciones Web"
+    frase = frase.replace("implantación de aplicaciones web", "Implantación de Aplicaciones Web");
+
+    // Reemplazar "módulo del segundo curso" por "Módulo del segundo curso"
+    frase = frase.replace("módulo del segundo curso", "Módulo del segundo curso");
+
+    // Reemplazar "administración de sistemas informáticos en red" por "ASIR"
+    frase = frase.replace("administración de sistemas informáticos en red", "ASIR");
+
+    // Mostrar la frase modificada
+    console.log(frase);
+}
+
   
 
-/* EJERCICIO DE CLASE "9" */
+/* SOLUCION DE EJERCICIO DE PRUEBA DE CLASE (FUNCIÓN DE EJERCICIO 9) */
 
 /*
 * Función que trnasforma las palabras de una cadena de caracteres pasando su primer caracter a mayúsculas.
