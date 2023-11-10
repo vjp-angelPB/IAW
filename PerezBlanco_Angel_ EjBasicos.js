@@ -405,31 +405,40 @@ nota promedio ciclo: 8,11
 */
 
 // a b y c
-function ASIR() {
-  	// Definir un array bidimensional para módulos y notas
-  	modulosYNotas = [
-    ["ISO", 8, "LMSGI", 7, "GBD", 9, "FOL", 8, "PARE", 8, "FHW", 9],
-    ["SAD", 8, "EIE", 8, "ASGBD", 7, "ASO", 9, "SRI", 8, "IAW", 7]
-  	];
+// function asir(){
+// 	modulos = [ ["ISO", "LMSGI", "GBD", "FOL", "PARE", "FHW"], ["SAD", "EIE", "ASGBD", "ASO", "SRI", "IAW"]];
+// 	notas = [ [8, 7, 9, 8, 8, 9], [8, 8, 7, 9, 8, 7]];
 
-	// Muestro por pantalla el nombre del alumno
-	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
+// 	// Muestro por pantalla el nombre del alumno
+// 	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
 
- 	// Itera por cada curso
-  	for (let i = 0; i < modulosYNotas.length; i++) {
-		if (i == 0) {
-		console.log("Primer curso:");
-		} 
-		else {
-		console.log("Segundo curso:");
-		}
+	
 
-    	// Itera por cada módulo y nota y muestra la información
-    for (let j = 0; j < modulosYNotas[i].length; j += 2) {
-      console.log(modulosYNotas[i][j], modulosYNotas[i][j + 1]);
-    }
-  }
-}
+// 	for (let i=0; i < modulos.length; i++){
+// 		if (i==0){
+// 			console.log("Primer curso:")
+// 		} else{
+// 			console.log("Segundo curso:")
+// 		}
+
+// 		// creo una variable que almacenara todas las notas y modulos en una sola linea
+// 		let linea = "";
+
+// 		// creo variables para almacenar la nota media de cada curso y la nota media del ciclo entero
+// 		let promedioprimercurso = "";
+// 		let promediosegundocurso =" ";
+// 		let promediociclo = (promedioprimercurso + promediosegundocurso) /2;
+
+// 		for (let j=0; j<modulos[i].length; j++){
+// 			linea += modulos[i][j] + ": " + notas[i][j] + "; ";
+// 		}
+// 		console.log(linea);
+
+// 	}
+// }
+
+
+
 
 /*
 for de modulos[i]
@@ -443,17 +452,94 @@ for de modulos[i]
 
 NOTA ejercicio 9: La solución se debe realizar procesando la frase original y, en ningún caso, creando una nueva cadena de caracteres que contenga la frase deseada.
 */
-function tranformar_mayusculas(){
-	let cadena=["implantación", "de", "aplicaciones", "web", "es", "un", "módulo", "del", "segundo", "curso", "del", "ciclo", "administración", "de" , "sistemas", "informáticos", "en", "red"];
-
-	for (let i=0; i < cadena.length; i++){
-		cadena[i]=cadena[i].toUpperCase();
+// function convertirFrase() {
+// 	let fraseOriginal = "implantación de aplicaciones web es un módulo del segundo curso del ciclo administración de sistemas informáticos en red";
+  
+// 	let modificaciones = {
+// 	  'implantación': 'Implantación',
+// 	  'aplicaciones': 'de Aplicaciones',
+// 	  'web': 'Web',
+// 	  'es': 'es',
+// 	  'un': 'un',
+// 	  'módulo': 'Módulo',
+// 	  'del': 'del',
+// 	  'segundo': 'segundo',
+// 	  'curso': 'curso',
+// 	  'ciclo': 'ciclo',
+// 	  'administración': 'de ASIR',
+// 	  'de': 'de',
+// 	  'sistemas': 'de',
+// 	  'informáticos': 'ASIR',
+// 	  'en': 'en',
+// 	  'red': ''
+// 	};
+  
+// 	let palabras = fraseOriginal.split(" ");
+  
+// 	for (let i = 0; i < palabras.length; i++) {
+// 	  let palabraActual = palabras[i].toLowerCase();
+// 	  palabras[i] = modificaciones[palabraActual] || palabras[i];
+// 	}
+  
+// 	let fraseConvertida = palabras.join(' ');
+// 	console.log(fraseConvertida);
+// }
+ 
+function asir() {
+	// Definir arrays bidimensionales para módulos y notas
+	const modulos = [
+	  ["ISO", "LMSGI", "GBD", "FOL", "PARE", "FHW"],
+	  ["SAD", "EIE", "ASGBD", "ASO", "SRI", "IAW"]
+	];
+	const notas = [
+	  [8, 7, 9, 8, 8, 9],
+	  [8, 8, 7, 9, 8, 7]
+	];
+  
+	// Muestro por pantalla el nombre del alumno
+	console.log("Notas en el ciclo de ASIR del alumno Ángel Pérez Blanco:");
+  
+	// Variables para almacenar las notas medias
+	let promedioPrimerCurso = 0;
+	let promedioSegundoCurso = 0;
+  
+	for (let i = 0; i < modulos.length; i++) {
+	  if (i === 0) {
+		console.log("Primer curso:");
+	  } else {
+		console.log("Segundo curso:");
+	  }
+  
+	  // Variable para almacenar todas las notas y módulos en una sola línea
+	  let linea = "";
+  
+	  for (let j = 0; j < modulos[i].length; j++) {
+		linea += modulos[i][j] + ": " + notas[i][j] + " ";
+		// Sumar las notas para calcular el promedio del curso
+		if (i === 0) {
+		  promedioPrimerCurso += notas[i][j];
+		} else {
+		  promedioSegundoCurso += notas[i][j];
+		}
+	  }
+  
+	  console.log(linea);
 	}
-	console.log(cadena);
-	
+  
+	// Calcular y mostrar los promedios
+	promedioPrimerCurso /= modulos[0].length;
+	promedioSegundoCurso /= modulos[1].length;
+	promedioCiclo = (promedioPrimerCurso + promedioSegundoCurso) / 2;
+  
+	console.log("");
+	console.log("Promedio notas primer curso: " + promedioPrimerCurso);
+	console.log("Promedio notas segundo curso: " + promedioSegundoCurso);
+	console.log("Nota promedio ciclo: " + promedioCiclo);
 }
-
-
+  
+  
+  
+  
 
 /* EJERCICIO DE CLASE "9" */
 
