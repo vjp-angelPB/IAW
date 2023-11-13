@@ -16,6 +16,9 @@
     </form>
     
     <script>
+
+        const SEPARADOR_EMAIL = "@";
+
         function validarDireccion(){
             let valorRetorno=true;
             let contenidoDireccion=document.getElementById("direccion").value;
@@ -60,9 +63,25 @@
 
         function validarEmail(){
             let valorRetorno=true;
-            let correo = document.getElementById("correo").value;
-
+            let contenido = document.getElementById("correo").value;
+            let vEmail = contenido.split(SEPARADOR_EMAIL);
             
+            if (vEmail.length != 2){
+                // Comprobación de la existencia del caracter "@" y de un nombre + un dominio
+                valorRetorno=false;
+            }
+            else if(vEmail[0].trim().length==0){
+                    // comprobación del nombre de la dirección de correo
+                    valorRetorno=false;
+            }                
+            else if (vEmail[1].length <= 0){
+                // Comprobamos el dominio
+                valorRetorno=false;
+            }
+
+            // hacer el split con .
+            //y para cada una de las partes del split comprobar la longituf
+
         }
 
         function validarFormulario(){
