@@ -47,7 +47,7 @@
                 valorRetorno=false;
             }
 
-            // validacion de la letra del DNI
+            // validacion de la letra del DNI 
             let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
 
             let letraDNI= letras[contenidoDni.substring(0, 8)%23];
@@ -56,6 +56,13 @@
             }
 
             return valorRetorno;
+        }
+
+        function validarEmail(){
+            let valorRetorno=true;
+            let correo = document.getElementById("correo").value;
+
+            
         }
 
         function validarFormulario(){
