@@ -62,26 +62,49 @@
         }
 
         function validarEmail(){
+
+            // consideramos que la @ de correo es correta
             let valorRetorno=true;
+
+            // comprobamos todos los casos en los que la @ de email es erronea
             let contenido = document.getElementById("correo").value;
             let vEmail = contenido.split(SEPARADOR_EMAIL);
             
+            // Caso 1: si no tiene nombre y dominio separado por @
             if (vEmail.length != 2){
                 // Comprobación de la existencia del caracter "@" y de un nombre + un dominio
                 valorRetorno=false;
             }
+
+            // Caso 2: si el nombre no existe
             else if(vEmail[0].trim().length==0){
                     // comprobación del nombre de la dirección de correo
                     valorRetorno=false;
-            }                
+            }     
+            
+            // Caso 3: si el dominio no existe
             else if (vEmail[1].length <= 0){
-                // Comprobamos el dominio
                 valorRetorno=false;
             }
 
-            // hacer el split con .
-            //y para cada una de las partes del split comprobar la longituf
+            else {
+                // Si estamos en este punto es porque existe el dominio
+                let vDominio = vEmail[1].split(".");
 
+                // caso 3.1: existe un subdominio y un dominio de nivel superior
+                if(vDominio.length >= 2){
+                    if ((vDominio[0].length <= 0) || (vDominio[1].length <= 0))
+                    {
+                    valorRetorno=false;
+                    } 
+                // suponiendo que tuviera más ".", para acceder al dominio (que está en la última posición) sería así:
+                // let uld = vDominio[vDominio.length-1];
+                }
+                else {
+                    valorRetorno=false;
+                }
+            }                 
+                return valorRetorno
         }
 
         function validarFormulario(){
@@ -97,7 +120,7 @@
             
 
         }
-
+        
 
     </script>
 
