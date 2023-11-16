@@ -118,7 +118,101 @@
     <img src="img/LogoPl.png" alt="Logo Ayuntamiento de Plasencia" style="margin-left: 50%;">
 
     <script>
+        
+        const SEPARADOR_EMAIL = "@";
 
+        function validarDireccion(){
+            let valorRetorno=true;
+            let contenidoDireccion=document.getElementById("direccion").value;
+            if ((contenidoDireccion.length < 5) || (contenidoDireccion.length >= 20)){
+                valorRetorno=false;
+            }
+
+            return valorRetorno;
+        }
+
+        function validarTelefono(){
+            let valorRetorno=true;
+            let contenidoTelefono = document.getElementById("telefono").value;
+            const patronTlf=/^[6789]\d{8}$/;
+            if (patronTlf.test(contenidoTelefono)==false){
+                valorRetorno=false;
+            }
+
+            return valorRetorno;
+        }
+
+        function validarDNI(){
+            let valorRetorno=true;
+            let contenidoDni = document.getElementById("dni").value;
+            
+            // validacion del formado del DNI
+            const patronDni=/^\d{8}[A-Z]|[a-z]$/;
+            if (patronDni.test(contenidoDni)==false){
+                valorRetorno=false;
+            }
+
+            // validacion de la letra del DNI 
+            let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+            let letraDNI= letras[contenidoDni.substring(0, 8)%23];
+            if (letraDNI != contenidoDNI.charAt(8)){
+                valorRetorno = false;
+            }
+
+            return valorRetorno;
+        }
+
+        function validarEmail(){
+            let valorRetorno=true; // Consideramos que la @de correo es correcta
+            let email=(document.getElementById('correo').value).trim();
+            let vEmail=email.split('@');
+            if (vEmail.length!=2){
+                valorRetorno=false;
+            } else {
+                let nombre=vEmail[0];
+                let dominio=vEmail[1];
+                if (nombre.length==0){
+                    valorRetorno=false;
+                } else {
+                    let vDominio=dominio.split('.');
+                    if (vDominio.length<=1){
+                        valorRetorno=false;
+                    }else{
+                        for(let i=0; ((i<vDominio.length) && (valorRetorno!=false)) ; i++){
+                            if (vDominio[i].length==0){
+                                valorRetorno=false;
+                            }
+                        }
+                    }
+                }                
+            }
+
+            let vCaracterNoPermitido=['$','%','€','*', '+', '-', ';', ',', '{', '}','?', '/', '\"', '\'', '\\', '|', '/']; // Alguno más ....
+            for (let j=0; ((j<vCaracterNoPermitido.length) && (valorRetorno!=false)); j++){
+                if (email.includes(vCaracterNoPermitido[j])==true){
+                    valorRetorno=false;
+                }
+            }
+
+            return valorRetorno;
+        }
+
+        function validarFormulario(){
+            if (validarDireccion()==false){
+                alert("La dirección introducida es incorrecta.")
+            }
+            if (validarTelefono()==false){
+                alert("El número de teléfono introducido es incorrecto.");
+            }
+            if (validarDNI()==false){
+                alert("El DNI no tiene el formato correcto");
+            }
+            if (validarEmail()==false){
+                alert("El email es incorrecto");
+            }            
+
+        }
 
 
 
