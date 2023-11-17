@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="width: max-content; margin: auto;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Propuesta</title>
+    
+    <!-- <style>
+        .required{required};
+
+    </style> -->
 </head>
 <body>
-    <img src="img/Escudo_Plasencia.png" alt="Escudo de Plasencia" style="height: 130px; margin-left:47%; margin-right:50%;">
+    <img src="img/Escudo_Plasencia.png" alt="Escudo de Plasencia" style="height: 130px; display: block; margin: auto;">
 
-    <hr style="border: 2px solid grey;">
+    <hr style="height: 3px; background-color: grey;">
 
     <p style="text-align: center; font-size: 20px; font-weight: bolder;">FORMULARIO DE PROPUESTAS</p>
     <p style="text-align: center; font-size: 20px; font-weight: bolder;">PRESUPUESTOS PARTICIPATIVOS</p>
 
-    <hr style="border: 2px solid grey;">
+    <hr style="height: 3px; background-color: grey;">
 
     <form action="" method="get" onsubmit="return validarFormulario()">
 
-        <label for="ocultardatoseconomicos">Ocultar datos económicos</label><input type="checkbox">
+        <label for="ocultardatoseconomicos">Ocultar datos económicos</label><input type="checkbox" id="ocultardatoseconomicos" name="ocultardatoseconomicos" checked onclick="mostrarpresupuesto()">
 
         <br>
         <br>
@@ -26,56 +31,46 @@
 
         <br>
 
-        <fieldset>
+        <fieldset style="margin-bottom: 20px;">
             <legend>DATOS PERSONALES</legend>
                 <!-- Nombre, apellidos, nif, telefono y correo -->
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" style="width: 90%; margin-bottom: 10px;">
+                <input type="text" id="nombre" name="nombre" size="115" style="size: 200px; margin-bottom: 10px;">
 
                 <br>
 
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" style="width: 90%; margin-bottom: 10px;">
+                <input type="text" id="apellidos" name="apellidos" style="width: 91.7%; margin-bottom: 10px;">
 
                 <br>
 
-                <label for="dni">NIF/CIF</label>
-                <input type="text" id="dni" name="nifcif" style="margin-bottom: 10px; width: 40%; ">
+                <label for="DNI">NIF/CIF</label>
+                <input type="text" id="DNI" name="DNI" style="margin-bottom: 10px; width: 42%; ">
 
-                <label for="telefono" style="margin-left: 30px;">Teléfono</label>
+                <label for="telefono" style="margin-left: 20px;">Teléfono</label>
                 <input type="txt" id="telefono" name="telefono" style="margin-bottom: 10px; width: 40%;">
 
                 <br>
 
                 <label for="correo">Correo electrónico</label>
-                <input type="text" id="correo" name="correo" style="width: 85%;">
+                <input type="text" id="correo" name="correo" style="width: 85%; margin-bottom: 15px;">
 
-                <br>
-                <br>
-
-                <label for="precargardatos" style="position: absolute; right: 70px;">Precargar datos</label><input type="checkbox" style="position: absolute; right: 50px;">
-                <br>
+                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" style="margin-left: 5px;">
         </fieldset>
 
-        <br>
-
-        <fieldset>
+        <fieldset style="margin-bottom: 20px;">
             <legend>TITULO DE LA PROPUESTA</legend>
             <textarea name="titulopropuesta" id="titulopropuesta" cols="118" rows="3"></textarea>
 
         </fieldset>
 
-        <br>
-
-        <fieldset>
+        <fieldset style="margin-bottom: 20px;">
             <legend>DESCRIPCION DE LA PROPUESTA</legend>
             
             <textarea name="descripcionpropuesta" id="" cols="118" rows="5" placeholder="Breve descripción de la propesta (por ejemplo, poner una fuente en Main St.)"></textarea>
         </fieldset>
 
-        <br>
-
-        <fieldset>
+        <fieldset style="margin-bottom: 20px;">
             <legend>DESTINATARIOS</legend>
 
             <input type="checkbox"><label for="ninos">Niños</label>
@@ -84,9 +79,7 @@
 
         </fieldset>
 
-        <br>
-
-        <fieldset>
+        <fieldset style="margin-bottom: 20px;">
             <legend>BENEFICIOS DE LA PROPUESTA</legend>
 
             <input type="checkbox"><label for="infraestructuramunicipio">Mejora de las infraestructuras del municipio</label>
@@ -105,20 +98,18 @@
 
         </fieldset>
 
-        <br>
-
-        <fieldset>
-            <legend>PRESUPUESTOS DE LA PROPUESTA</legend>
-
-            <input type="radio"><label for="">Menos de 1000€</label>
-            <input type="radio" style="margin-left: 75px;"><label for="">De 1000 a 5000€</label>
-            <input type="radio" style="margin-left: 75px;"><label for="">De 5000 a 10000€</label>
-            
-        </fieldset>
-
-        <br>
+        <div id="presupuestopropuesta" style="display: inline-flex;">
+                <fieldset >
+                    <legend>PRESUPUESTOS DE LA PROPUESTA</legend>
         
-        <fieldset>
+                    <input type="radio" name="presupuesto" id="menosdemil"><label for="menosdemil">Menos de 1000€</label>
+                    <input type="radio" name="presupuesto" id="entremil" style="margin-left: 75px;"><label for="entremil">De 1000 a 5000€</label>
+                    <input type="radio" name="presupuesto" id="masdediezmil" style="margin-left: 75px;"><label for="masdediezmil">De 5000 a 10000€</label>
+        
+                </fieldset>
+        </div>
+        
+        <fieldset style="margin-bottom: 20px; margin-top: 20px;">
             <legend>DURACIÓN DE LA PROPUESTA</legend>
 
             <label for="">Fecha de inicio de la propuesta </label><input type="date">
@@ -126,27 +117,133 @@
 
         </fieldset>
 
-        <br>
-
         <fieldset>
             <legend>DOCUMENTACIÓN APORTADA</legend>
             <p style="margin-top: 0px;">Puede añadir fotos o cualquier otro documento que estime oportuno para la propuesta</p>
 
             <input type="file" name="examinar" id="examinar">
         </fieldset>
-
-
-        
+    
         <hr style="border: 2px solid grey;">
 
-        <button style="position: absolute;">Borrar formulario</button>
-        <button style="margin-left: 94%;">Enviar</button>
+        <button style="position: absolute;" type="reset">Borrar formulario</button>
+        <button style="margin-left: 94%;" type="submit">Enviar</button>
     </form>
 
-    <img src="img/LogoPl.png" alt="Logo Ayuntamiento de Plasencia" style="margin-left: 44%;">
+    <img src="img/LogoPl.png" alt="Logo Ayuntamiento de Plasencia" style="display: block; margin: auto;">
 
     <script>
         
+        const SEPARADOR_EMAIL = "@";
+
+        // creo una función para ocultar por defecto los presupuestos de la propuesta
+        function ocultarpresupuesto(){
+            let presupuesto = document.getElementById("presupuestopropuesta")
+            presupuesto.style.display='none'; 
+            //hago un display ya que si uso visibility queda un espacio en blanco porque no se vé el contenido, pero la info sigue ahi, en cambio con el display none no se despliega la información
+        };
+
+        // llamo directamente a la función para que se ejecute por defecto ya que no se llama la función al hacer clic, tiene que ejecutarse al abrirse la pág.
+        ocultarpresupuesto();
+
+
+        // creo una función para que al pulsar el checkbox al principio del formulario, aparezcan los datos de los presupuestos de las propuestas
+        function mostrarpresupuesto(){
+            let presupuesto = document.getElementById("presupuestopropuesta")
+            let checkbox = document.getElementById("ocultardatoseconomicos")
+
+            if (checkbox.checked){
+                presupuesto.style.display='none';
+            }
+            else {
+                presupuesto.style.display='contents';
+            }
+        };
+
+
+
+
+
+
+        function validarTelefono(){
+            let valorRetorno=true;
+            let contenidoTelefono = document.getElementById("telefono").value;
+            const patronTlf=/^[6789]\d{8}$/;
+            if (patronTlf.test(contenidoTelefono)==false){
+                valorRetorno=false;
+            }
+
+            return valorRetorno;
+        }
+
+        function validarDNI(){
+            let valorRetorno=true;
+            let contenidoDni = document.getElementById("DNI").value;
+            
+            // validacion del formato del DNI
+            const patronDni=/^\d{8}[A-Z]|[a-z]$/;
+            if (patronDni.test(contenidoDni)==false){
+                valorRetorno=false;
+            }
+
+            // validacion de la letra del DNI 
+            let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+            let letraDNI= letras[contenidoDni.substring(0, 8)%23];
+            if (letraDNI != contenidoDni.charAt(8)){
+                valorRetorno = false;
+            }
+
+            return valorRetorno;
+        }
+
+        function validarEmail(){
+            let valorRetorno=true; // Consideramos que la @de correo es correcta
+            let email=(document.getElementById("correo").value).trim();
+            let vEmail=email.split("@");
+            if (vEmail.length!=2){
+                valorRetorno=false;
+            } else {
+                let nombre=vEmail[0];
+                let dominio=vEmail[1];
+                if (nombre.length==0){
+                    valorRetorno=false;
+                } else {
+                    let vDominio=dominio.split('.');
+                    if (vDominio.length<=1){
+                        valorRetorno=false;
+                    }else{
+                        for(let i=0; ((i<vDominio.length) && (valorRetorno!=false)) ; i++){
+                            if (vDominio[i].length==0){
+                                valorRetorno=false;
+                            }
+                        }
+                    }
+                }                
+            }
+
+            let vCaracterNoPermitido=['$','%','€','*', '+', '-', ';', ',', '{', '}','?', '/', '\"', '\'', '\\', '|', '/']; // Alguno más ....
+            for (let j=0; ((j<vCaracterNoPermitido.length) && (valorRetorno!=false)); j++){
+                if (email.includes(vCaracterNoPermitido[j])==true){
+                    valorRetorno=false;
+                }
+            }
+
+            return valorRetorno;
+        }
+
+        function validarFormulario(){
+            if (validarTelefono()==false){
+                alert("El número de teléfono introducido es incorrecto.");
+            }
+            if (validarDNI()==false){
+                alert("El DNI no tiene el formato correcto");
+            }
+            if (validarEmail()==false){
+                alert("El email es incorrecto");
+            }
+        }
+
 
 
     </script>
