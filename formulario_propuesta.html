@@ -6,7 +6,7 @@
     <title>Formulario de Propuesta</title>
 </head>
 <body>
-    <img src="img/Escudo_Plasencia.png" alt="Escudo de Plasencia" style="height: 130px; margin-left:50%; margin-right:50%;">
+    <img src="img/Escudo_Plasencia.png" alt="Escudo de Plasencia" style="height: 130px; margin-left:47%; margin-right:50%;">
 
     <hr style="border: 2px solid grey;">
 
@@ -30,25 +30,25 @@
             <legend>DATOS PERSONALES</legend>
                 <!-- Nombre, apellidos, nif, telefono y correo -->
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" style="width: 90%;">
+                <input type="text" id="nombre" name="nombre" style="width: 90%; margin-bottom: 10px;">
 
                 <br>
 
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" style="width: 90%;">
+                <input type="text" id="apellidos" name="apellidos" style="width: 90%; margin-bottom: 10px;">
 
                 <br>
 
                 <label for="dni">NIF/CIF</label>
-                <input type="text" id="dni" name="nifcif">
+                <input type="text" id="dni" name="nifcif" style="margin-bottom: 10px; width: 40%; ">
 
-                <label for="telefono">Teléfono</label>
-                <input type="txt" id="telefono" name="telefono">
+                <label for="telefono" style="margin-left: 30px;">Teléfono</label>
+                <input type="txt" id="telefono" name="telefono" style="margin-bottom: 10px; width: 40%;">
 
                 <br>
 
                 <label for="correo">Correo electrónico</label>
-                <input type="text" id="correo" name="correo" style="width: 90%;">
+                <input type="text" id="correo" name="correo" style="width: 85%;">
 
                 <br>
                 <br>
@@ -79,8 +79,8 @@
             <legend>DESTINATARIOS</legend>
 
             <input type="checkbox"><label for="ninos">Niños</label>
-            <input type="checkbox"><label for="jovenes">Jovenes</label>
-            <input type="checkbox"><label for="ancianos">Ancianos</label>
+            <input type="checkbox" style="margin-left: 170px;"><label for="jovenes">Jovenes</label>
+            <input type="checkbox" style="margin-left: 170px;"><label for="ancianos">Ancianos</label>
 
         </fieldset>
 
@@ -90,13 +90,14 @@
             <legend>BENEFICIOS DE LA PROPUESTA</legend>
 
             <input type="checkbox"><label for="infraestructuramunicipio">Mejora de las infraestructuras del municipio</label>
-            <input type="checkbox" style="display: inline-block;"><label for="altademanda" style="display: inline-block;">Alta demanda</label>
+
+            <input type="checkbox" style="margin-left: 50px;"><label for="altademanda" style="display: inline-block;">Alta demanda</label>
             
             <br><br>
 
             <input type="checkbox"><label for="estructuraurbanistica">Mejora de la estructura ubrbanística del municipio</label>
             
-            <input type="checkbox" style="display: inline-block;"><label for="estructuraturistica" style="display: inline-block;">Mejora de la estructura turística del municipio</label>
+            <input type="checkbox" style="margin-left: 10px;"><label for="estructuraturistica" style="display: inline-block;">Mejora de la estructura turística del municipio</label>
             
             <br><br>
 
@@ -110,8 +111,8 @@
             <legend>PRESUPUESTOS DE LA PROPUESTA</legend>
 
             <input type="radio"><label for="">Menos de 1000€</label>
-            <input type="radio"><label for="">De 1000 a 5000€</label>
-            <input type="radio"><label for="">De 5000 a 10000€</label>
+            <input type="radio" style="margin-left: 75px;"><label for="">De 1000 a 5000€</label>
+            <input type="radio" style="margin-left: 75px;"><label for="">De 5000 a 10000€</label>
             
         </fieldset>
 
@@ -129,7 +130,7 @@
 
         <fieldset>
             <legend>DOCUMENTACIÓN APORTADA</legend>
-
+            <p style="margin-top: 0px;">Puede añadir fotos o cualquier otro documento que estime oportuno para la propuesta</p>
 
             <input type="file" name="examinar" id="examinar">
         </fieldset>
@@ -139,108 +140,13 @@
         <hr style="border: 2px solid grey;">
 
         <button style="position: absolute;">Borrar formulario</button>
-        <button style="position: left calc(100% - 3%);">Enviar</button>
+        <button style="margin-left: 94%;">Enviar</button>
     </form>
 
-    <img src="img/LogoPl.png" alt="Logo Ayuntamiento de Plasencia" style="margin-left: 50%;">
+    <img src="img/LogoPl.png" alt="Logo Ayuntamiento de Plasencia" style="margin-left: 44%;">
 
     <script>
         
-        const SEPARADOR_EMAIL = "@";
-
-        function validarDireccion(){
-            let valorRetorno=true;
-            let contenidoDireccion=document.getElementById("direccion").value;
-            if ((contenidoDireccion.length < 5) || (contenidoDireccion.length >= 20)){
-                valorRetorno=false;
-            }
-
-            return valorRetorno;
-        }
-
-        function validarTelefono(){
-            let valorRetorno=true;
-            let contenidoTelefono = document.getElementById("telefono").value;
-            const patronTlf=/^[6789]\d{8}$/;
-            if (patronTlf.test(contenidoTelefono)==false){
-                valorRetorno=false;
-            }
-
-            return valorRetorno;
-        }
-
-        function validarDNI(){
-            let valorRetorno=true;
-            let contenidoDni = document.getElementById("dni").value;
-            
-            // validacion del formado del DNI
-            const patronDni=/^\d{8}[A-Z]|[a-z]$/;
-            if (patronDni.test(contenidoDni)==false){
-                valorRetorno=false;
-            }
-
-            // validacion de la letra del DNI 
-            let letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
-
-            let letraDNI= letras[contenidoDni.substring(0, 8)%23];
-            if (letraDNI != contenidoDNI.charAt(8)){
-                valorRetorno = false;
-            }
-
-            return valorRetorno;
-        }
-
-        function validarEmail(){
-            let valorRetorno=true; // Consideramos que la @de correo es correcta
-            let email=(document.getElementById('correo').value).trim();
-            let vEmail=email.split('@');
-            if (vEmail.length!=2){
-                valorRetorno=false;
-            } else {
-                let nombre=vEmail[0];
-                let dominio=vEmail[1];
-                if (nombre.length==0){
-                    valorRetorno=false;
-                } else {
-                    let vDominio=dominio.split('.');
-                    if (vDominio.length<=1){
-                        valorRetorno=false;
-                    }else{
-                        for(let i=0; ((i<vDominio.length) && (valorRetorno!=false)) ; i++){
-                            if (vDominio[i].length==0){
-                                valorRetorno=false;
-                            }
-                        }
-                    }
-                }                
-            }
-
-            let vCaracterNoPermitido=['$','%','€','*', '+', '-', ';', ',', '{', '}','?', '/', '\"', '\'', '\\', '|', '/']; // Alguno más ....
-            for (let j=0; ((j<vCaracterNoPermitido.length) && (valorRetorno!=false)); j++){
-                if (email.includes(vCaracterNoPermitido[j])==true){
-                    valorRetorno=false;
-                }
-            }
-
-            return valorRetorno;
-        }
-
-        function validarFormulario(){
-            if (validarDireccion()==false){
-                alert("La dirección introducida es incorrecta.")
-            }
-            if (validarTelefono()==false){
-                alert("El número de teléfono introducido es incorrecto.");
-            }
-            if (validarDNI()==false){
-                alert("El DNI no tiene el formato correcto");
-            }
-            if (validarEmail()==false){
-                alert("El email es incorrecto");
-            }            
-
-        }
-
 
 
     </script>
