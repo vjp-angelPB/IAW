@@ -55,7 +55,7 @@
                 <label for="correo">Correo electrónico</label>
                 <input type="text" id="correo" name="correo" style="width: 85%; margin-bottom: 15px;">
 
-                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" style="margin-left: 5px;">
+                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" name="precargardatos" id="precargardatos" style="margin-left: 5px;">
         </fieldset>
 
         <fieldset style="margin-bottom: 20px;">
@@ -161,10 +161,24 @@
         };
 
 
+        function precargarDatos(){
+            let datos= document.getElementById("precargardatos").value;
+            let checkbox2 = document.getElementById("precargardatos");
+
+            if (checkbox2.checked){
+                document.getElementById('nombre').value = "Ángel";
+                var input2 = document.getElementById('apellido1').value;
+                var input4 = document.getElementById('DNI').value;
+                var input6 = document.getElementById('telefono').value;
+                var input5 = document.getElementById('email').value;
+            }
+
+        }
 
 
 
-
+        // creo la función para comprobar si el teléfono introducido es correcto o no, para ello le paso una expresión regular y le digo que:
+        // tiene que empezar por 6,7,8 o 9 y después tiene que tener un dígito del 1 al 9 y tiene que repetirse 8 veces
         function validarTelefono(){
             let valorRetorno=true;
             let contenidoTelefono = document.getElementById("telefono").value;
@@ -176,6 +190,7 @@
             return valorRetorno;
         }
 
+        // creo la función que comprueba si el DNI introducido es correcto, para ello utilizo una expresión regular que compara lo q le entra por parámetros con la expresión que tiene que comenzar por un dígito del al 9 repedido 8 veces y después debe ir una letra de la A a la Z y puede ser en mayúscula o en minúscula
         function validarDNI(){
             let valorRetorno=true;
             let contenidoDni = document.getElementById("DNI").value;
@@ -197,23 +212,35 @@
             return valorRetorno;
         }
 
+        // creo unna función que valida el email
         function validarEmail(){
-            let valorRetorno=true; // Consideramos que la @de correo es correcta
+            let valorRetorno=true; // Consideramos que la @ de correo es correcta
+            
+            // Obtener el valor del correo y eliminar espacios en blanco al inicio y al final
             let email=(document.getElementById("correo").value).trim();
+            
+            // Separar el correo en dos partes usando "@" como separador
             let vEmail=email.split("@");
+            
+            // Verificar si hay exactamente una "@" en el correo
             if (vEmail.length!=2){
                 valorRetorno=false;
             } else {
-                let nombre=vEmail[0];
-                let dominio=vEmail[1];
+                let nombre=vEmail[0]; // Obtener la parte antes de "@"
+                let dominio=vEmail[1]; // Obtener la parte después de "@"
+                
+                // Verificar si la parte antes de "@" tiene algún contenido
                 if (nombre.length==0){
                     valorRetorno=false;
                 } else {
-                    let vDominio=dominio.split('.');
+                    let vDominio=dominio.split('.'); // Separar el dominio usando "." como separador
+                    
+                    // Verificar si el dominio tiene al menos un punto para separar subdominios
                     if (vDominio.length<=1){
                         valorRetorno=false;
-                    }else{
-                        for(let i=0; ((i<vDominio.length) && (valorRetorno!=false)) ; i++){
+                    } else {
+                        // Verificar cada parte del dominio para asegurarse de que no esté vacía
+                        for(let i=0; ((i<vDominio.length) && (valorRetorno!=false)); i++){
                             if (vDominio[i].length==0){
                                 valorRetorno=false;
                             }
@@ -222,16 +249,21 @@
                 }                
             }
 
-            let vCaracterNoPermitido=['$','%','€','*', '+', '-', ';', ',', '{', '}','?', '/', '\"', '\'', '\\', '|', '/']; // Alguno más ....
+            // Lista de caracteres no permitidos en el correo electrónico
+            let vCaracterNoPermitido=['$','%','€','*', '+', '-', ';', ',', '{', '}','ñ','¿','?','!','¡', '/', '\"', '\'', '\\', '|', '/'];
+            
+            // Verificar si el correo contiene algún carácter no permitido
             for (let j=0; ((j<vCaracterNoPermitido.length) && (valorRetorno!=false)); j++){
                 if (email.includes(vCaracterNoPermitido[j])==true){
                     valorRetorno=false;
                 }
             }
 
-            return valorRetorno;
+            return valorRetorno; // Devolver si el correo es válido o no
         }
 
+
+        // creo una función que engloba a las otras 3 funciones y comprueba si el teléfono, DNI y email introducidos son correctos, sino muestra un alert/mensaje mostrando que el parámetro introducido es incorecto.
         function validarFormulario(){
             if (validarTelefono()==false){
                 alert("El número de teléfono introducido es incorrecto.");
