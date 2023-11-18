@@ -27,6 +27,7 @@
         <br>
         <br>
 
+        <!-- Creo la barra gris con datos de la propuesta --> 
         <label for="" style="color: white; background-color: grey; display: block; padding-left: 8px; padding-bottom: 8px; padding-top: 4px; font-weight: bolder;">DATOS DE LA PROPUESTA</label>
 
         <br>
@@ -55,21 +56,24 @@
                 <label for="correo">Correo electrónico</label>
                 <input type="text" id="correo" name="correo" style="width: 85%; margin-bottom: 15px;">
 
-                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" name="precargardatos" id="precargardatos" style="margin-left: 5px;">
+                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" name="precargardatos" id="precargardatos" style="margin-left: 5px;" onclick="precargarDatos()">
         </fieldset>
 
+        <!-- Creo la seccion TÍTULO DE LA PROPUESTA  -->
         <fieldset style="margin-bottom: 20px;">
-            <legend>TITULO DE LA PROPUESTA</legend>
+            <legend>TÍTULO DE LA PROPUESTA</legend>
             <textarea name="titulopropuesta" id="titulopropuesta" cols="118" rows="3"></textarea>
 
         </fieldset>
 
+        <!-- Creo la seccion DESCRIPCIÓN DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px;">
-            <legend>DESCRIPCION DE LA PROPUESTA</legend>
+            <legend>DESCRIPCIÓN DE LA PROPUESTA</legend>
             
             <textarea name="descripcionpropuesta" id="" cols="118" rows="5" placeholder="Breve descripción de la propesta (por ejemplo, poner una fuente en Main St.)"></textarea>
         </fieldset>
 
+        <!-- Creo la seccion DESTINATARIOS -->
         <fieldset style="margin-bottom: 20px;">
             <legend>DESTINATARIOS</legend>
 
@@ -79,6 +83,7 @@
 
         </fieldset>
 
+        <!-- Creo la seccion BENEFICIOS DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px;">
             <legend>BENEFICIOS DE LA PROPUESTA</legend>
 
@@ -98,17 +103,19 @@
 
         </fieldset>
 
+        <!-- Creo la seccion PRESUPUESTOS DE LA PROPUESTA -->
         <div id="presupuestopropuesta" style="display: inline-flex;">
                 <fieldset >
                     <legend>PRESUPUESTOS DE LA PROPUESTA</legend>
         
-                    <input type="radio" name="presupuesto" id="menosdemil"><label for="menosdemil">Menos de 1000€</label>
+                    <input type="radio" name="presupuesto" id="menosdemil" checked><label for="menosdemil">Menos de 1000€</label>
                     <input type="radio" name="presupuesto" id="entremil" style="margin-left: 75px;"><label for="entremil">De 1000 a 5000€</label>
                     <input type="radio" name="presupuesto" id="masdediezmil" style="margin-left: 75px;"><label for="masdediezmil">De 5000 a 10000€</label>
         
                 </fieldset>
         </div>
         
+        <!-- Creo la sección de DURACIÓN DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px; margin-top: 20px;">
             <legend>DURACIÓN DE LA PROPUESTA</legend>
 
@@ -117,6 +124,7 @@
 
         </fieldset>
 
+        <!-- Creo la sección de DOCUMENTACIÓN APORTADA -->
         <fieldset>
             <legend>DOCUMENTACIÓN APORTADA</legend>
             <p style="margin-top: 0px;">Puede añadir fotos o cualquier otro documento que estime oportuno para la propuesta</p>
@@ -126,12 +134,15 @@
     
         <hr style="border: 2px solid grey;">
 
+        <!-- Creo el botón para borrar los datos del formulario y el boton para enviar los datos del formulario -->
         <button style="position: absolute;" type="reset">Borrar formulario</button>
         <button style="margin-left: 94%;" type="submit">Enviar</button>
     </form>
 
     <img src="img/LogoPl.png" alt="Logo Ayuntamiento de Plasencia" style="display: block; margin: auto;">
 
+
+    <!-- Creo las funciones JavaScript aquí -->
     <script>
         
         const SEPARADOR_EMAIL = "@";
@@ -149,8 +160,8 @@
 
         // creo una función para que al pulsar el checkbox al principio del formulario, aparezcan los datos de los presupuestos de las propuestas
         function mostrarpresupuesto(){
-            let presupuesto = document.getElementById("presupuestopropuesta")
-            let checkbox = document.getElementById("ocultardatoseconomicos")
+            let presupuesto = document.getElementById("presupuestopropuesta");
+            let checkbox = document.getElementById("ocultardatoseconomicos");
 
             if (checkbox.checked){
                 presupuesto.style.display='none';
@@ -161,18 +172,24 @@
         };
 
 
+        // creo una función para mostrar datos por defecto si está activado el checbox precargar datos y si no está activado se ponen por defecto a blanco 
         function precargarDatos(){
-            let datos= document.getElementById("precargardatos").value;
-            let checkbox2 = document.getElementById("precargardatos");
+            let precargar = document.getElementById("precargardatos");
 
-            if (checkbox2.checked){
+            if (precargar.checked){
                 document.getElementById('nombre').value = "Ángel";
-                var input2 = document.getElementById('apellido1').value;
-                var input4 = document.getElementById('DNI').value;
-                var input6 = document.getElementById('telefono').value;
-                var input5 = document.getElementById('email').value;
+                document.getElementById('apellidos').value = "Pérez Blanco";
+                document.getElementById('DNI').value = "45139990Y";
+                document.getElementById('telefono').value = "607493064";
+                document.getElementById('correo').value = "aperezb33@informatica.iesvalledeljerteplasencia.es";
             }
-
+            else {
+                document.getElementById('nombre').value = "";
+                document.getElementById('apellidos').value = "";
+                document.getElementById('DNI').value = "";
+                document.getElementById('telefono').value = "";
+                document.getElementById('correo').value = "";
+            }
         }
 
 
@@ -275,7 +292,6 @@
                 alert("El email es incorrecto");
             }
         }
-
 
 
     </script>
