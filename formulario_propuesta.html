@@ -27,7 +27,6 @@
         <br>
         <br>
 
-        <!-- Creo la barra gris con datos de la propuesta --> 
         <label for="" style="color: white; background-color: grey; display: block; padding-left: 8px; padding-bottom: 8px; padding-top: 4px; font-weight: bolder;">DATOS DE LA PROPUESTA</label>
 
         <br>
@@ -56,46 +55,42 @@
                 <label for="correo">Correo electrónico</label>
                 <input type="text" id="correo" name="correo" style="width: 85%; margin-bottom: 15px;">
 
-                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" name="precargardatos" id="precargardatos" style="margin-left: 5px;" onclick="precargarDatos()">
+                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" style="margin-left: 5px;">
         </fieldset>
 
-        <!-- Creo la seccion TÍTULO DE LA PROPUESTA  -->
         <fieldset style="margin-bottom: 20px;">
-            <legend>TÍTULO DE LA PROPUESTA</legend>
+            <legend>TITULO DE LA PROPUESTA</legend>
             <textarea name="titulopropuesta" id="titulopropuesta" cols="118" rows="3"></textarea>
 
         </fieldset>
 
-        <!-- Creo la seccion DESCRIPCIÓN DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px;">
-            <legend>DESCRIPCIÓN DE LA PROPUESTA</legend>
+            <legend>DESCRIPCION DE LA PROPUESTA</legend>
             
-            <textarea name="descripcionpropuesta" id="" cols="118" rows="5" placeholder="Breve descripción de la propesta (por ejemplo, poner una fuente en Main St.)"></textarea>
+            <textarea name="descripcionpropuesta" id="descripcionpropuesta" cols="118" rows="5" placeholder="Breve descripción de la propesta (por ejemplo, poner una fuente en Main St.)"></textarea>
         </fieldset>
 
-        <!-- Creo la seccion DESTINATARIOS -->
         <fieldset style="margin-bottom: 20px;">
             <legend>DESTINATARIOS</legend>
 
-            <input type="checkbox"><label for="ninos">Niños</label>
-            <input type="checkbox" style="margin-left: 170px;"><label for="jovenes">Jovenes</label>
-            <input type="checkbox" style="margin-left: 170px;"><label for="ancianos">Ancianos</label>
+            <input type="checkbox" name="ninos" id="ninos"><label for="ninos">Niños</label>
+            <input type="checkbox" name="jovenes" id="jovenes" style="margin-left: 170px;"><label for="jovenes">Jovenes</label>
+            <input type="checkbox" name="ancianos" id="ancianos" style="margin-left: 170px;"><label for="ancianos">Ancianos</label>
 
         </fieldset>
 
-        <!-- Creo la seccion BENEFICIOS DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px;">
             <legend>BENEFICIOS DE LA PROPUESTA</legend>
 
-            <input type="checkbox"><label for="infraestructuramunicipio">Mejora de las infraestructuras del municipio</label>
+            <input type="checkbox" name="infraestructuramunicipio" id="infraestructuramunicipio"><label for="infraestructuramunicipio">Mejora de las infraestructuras del municipio</label>
 
-            <input type="checkbox" style="margin-left: 50px;"><label for="altademanda" style="display: inline-block;">Alta demanda</label>
+            <input type="checkbox" name="altademanda" id="altademanda" style="margin-left: 50px;"><label for="altademanda" style="display: inline-block;">Alta demanda</label>
             
             <br><br>
 
-            <input type="checkbox"><label for="estructuraurbanistica">Mejora de la estructura ubrbanística del municipio</label>
+            <input type="checkbox" name="estructuraurbanistica" id="estructuraurbanistica"><label for="estructuraurbanistica">Mejora de la estructura ubrbanística del municipio</label>
             
-            <input type="checkbox" style="margin-left: 10px;"><label for="estructuraturistica" style="display: inline-block;">Mejora de la estructura turística del municipio</label>
+            <input type="checkbox" name="estructuraturistica" id="estructuraturistica" style="margin-left: 10px;"><label for="estructuraturistica" style="display: inline-block;">Mejora de la estructura turística del municipio</label>
             
             <br><br>
 
@@ -103,28 +98,25 @@
 
         </fieldset>
 
-        <!-- Creo la seccion PRESUPUESTOS DE LA PROPUESTA -->
         <div id="presupuestopropuesta" style="display: inline-flex;">
                 <fieldset >
                     <legend>PRESUPUESTOS DE LA PROPUESTA</legend>
         
-                    <input type="radio" name="presupuesto" id="menosdemil" checked><label for="menosdemil">Menos de 1000€</label>
+                    <input type="radio" name="presupuesto" id="menosdemil"><label for="menosdemil">Menos de 1000€</label>
                     <input type="radio" name="presupuesto" id="entremil" style="margin-left: 75px;"><label for="entremil">De 1000 a 5000€</label>
                     <input type="radio" name="presupuesto" id="masdediezmil" style="margin-left: 75px;"><label for="masdediezmil">De 5000 a 10000€</label>
         
                 </fieldset>
         </div>
         
-        <!-- Creo la sección de DURACIÓN DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px; margin-top: 20px;">
             <legend>DURACIÓN DE LA PROPUESTA</legend>
 
-            <label for="">Fecha de inicio de la propuesta </label><input type="date">
-            <label for="" style="margin-left: 90px;">Fecha de fin de la propuesta </label><input type="date">
+            <label for="fechainicio_propuesta">Fecha de inicio de la propuesta </label><input type="date" name="fechainicio_propuesta" id="fechainicio_propuesta">
+            <label for="fechafin_propuesta" style="margin-left: 90px;">Fecha de fin de la propuesta </label><input type="date" name="fechafin_propuesta" id="fechafin_propuesta">
 
         </fieldset>
 
-        <!-- Creo la sección de DOCUMENTACIÓN APORTADA -->
         <fieldset>
             <legend>DOCUMENTACIÓN APORTADA</legend>
             <p style="margin-top: 0px;">Puede añadir fotos o cualquier otro documento que estime oportuno para la propuesta</p>
@@ -134,15 +126,12 @@
     
         <hr style="border: 2px solid grey;">
 
-        <!-- Creo el botón para borrar los datos del formulario y el boton para enviar los datos del formulario -->
         <button style="position: absolute;" type="reset">Borrar formulario</button>
         <button style="margin-left: 94%;" type="submit">Enviar</button>
     </form>
 
     <img src="img/LogoPl.png" alt="Logo Ayuntamiento de Plasencia" style="display: block; margin: auto;">
 
-
-    <!-- Creo las funciones JavaScript aquí -->
     <script>
         
         const SEPARADOR_EMAIL = "@";
@@ -172,30 +161,65 @@
         };
 
 
-        // creo una función para mostrar datos por defecto si está activado el checbox precargar datos y si no está activado se ponen por defecto a blanco 
-        function precargarDatos(){
-            let precargar = document.getElementById("precargardatos");
+        // creo una función para asegurarme de que el usuario completa todos los campos que son obligatorios
+        function camposObligatorios(){
+            let Nombre = document.getElementById("nombre").value;
+            let Apellidos = document.getElementById("apellidos").value;
+            let Dni = document.getElementById("DNI").value;
+            let Telefono = document.getElementById("telefono").value;
+            let Correo = document.getElementById("correo").value;
+            let TituloPropuesta = document.getElementById("titulopropuesta").value;
+            let DescripcionPropuesta = document.getElementById("descripcionpropuesta").value;
+            let Ninos = document.getElementById("ninos").value;
+            let Jovenes = document.getElementById("jovenes").value;
+            let Ancianos = document.getElementById("ancianos").value;
+            let InfraestructuraMunicipio = document.getElementById("infraestructuramunicipio").value;
+            let AltaDemanda = document.getElementById("altademanda").value;
+            let EstructuraUrbanistica = document.getElementById("estructuraurbanistica").value;
+            let EstructuraTuristica = document.getElementById("estructuraturistica").value;
+            let FechaInicio_Propuesta = document.getElementById("fechainicio_propuesta").value;
+            let FechaFin_Propuesta = document.getElementById("fechafin_propuesta").value;
 
-            if (precargar.checked){
-                document.getElementById('nombre').value = "Ángel";
-                document.getElementById('apellidos').value = "Pérez Blanco";
-                document.getElementById('DNI').value = "45139990Y";
-                document.getElementById('telefono').value = "607493064";
-                document.getElementById('correo').value = "aperezb33@informatica.iesvalledeljerteplasencia.es";
+            let valorRetorno=true;
+
+            if (Nombre.length <= 0){
+                alert("El campo nombre es obligatorio.");
+                valorRetorno=false;
+            } if (Apellidos.length <= 0){
+                alert("El campo apellido es obligatorio.");
+                valorRetorno=false;
+            } if (Dni.length <= 0){
+                alert("El campo dni es obligatorio.");
+                valorRetorno=false;
+            } if (Telefono.length <= 0){
+                alert("El campo telefono es obligatorio.");
+                valorRetorno=false;
+            } if (Correo.length <= 0){
+                alert("El campo correo es obligatorio.");
+                valorRetorno=false;
+            } if (TituloPropuesta.length <= 0){
+                alert("El campo Titulo de la Propuesta es obligatorio.");
+                valorRetorno=false;
+            } if (DescripcionPropuesta.length <= 0){
+                alert("La descripción de la propuesta no puede estar vacía.");
+                valorRetorno=false;
+            } if ((Ninos.length <= 0 )|| (Jovenes.length <= 0) || (Ancianos.length <= 0)){
+                alert("El campo Destinatarios no puede estar vacío, debe seleccionar una opción.");
+                valorRetorno=false;
+            } if ((InfraestructuraMunicipio.length <= 0 ) || (AltaDemanda.length <= 0) || (EstructuraUrbanistica.length <= 0 ) || (EstructuraTuristica.length <= 0)){
+                valorRetorno=false;
+                alert("El campo Beneficios de la Propuesta no puede estar vacío, debe seleccionar alguna casilla.");
+            } if ((FechaInicio_Propuesta.length <= 0 ) || (FechaFin_Propuesta.length <= 0)){
+                alert("Fecha Inicial y Final de la propuesta no pueden estar vacíos o ser iguales.");
+                valorRetorno=false;
             }
-            else {
-                document.getElementById('nombre').value = "";
-                document.getElementById('apellidos').value = "";
-                document.getElementById('DNI').value = "";
-                document.getElementById('telefono').value = "";
-                document.getElementById('correo').value = "";
-            }
-        }
+
+            return valorRetorno;
+        };
 
 
 
-        // creo la función para comprobar si el teléfono introducido es correcto o no, para ello le paso una expresión regular y le digo que:
-        // tiene que empezar por 6,7,8 o 9 y después tiene que tener un dígito del 1 al 9 y tiene que repetirse 8 veces
+        // creo una función para validar que el número de teléfono que el usuario introduce es correcto
         function validarTelefono(){
             let valorRetorno=true;
             let contenidoTelefono = document.getElementById("telefono").value;
@@ -207,7 +231,7 @@
             return valorRetorno;
         }
 
-        // creo la función que comprueba si el DNI introducido es correcto, para ello utilizo una expresión regular que compara lo q le entra por parámetros con la expresión que tiene que comenzar por un dígito del al 9 repedido 8 veces y después debe ir una letra de la A a la Z y puede ser en mayúscula o en minúscula
+        // creo una función para validar que el DNI que el usuario introduce es correcto
         function validarDNI(){
             let valorRetorno=true;
             let contenidoDni = document.getElementById("DNI").value;
@@ -229,35 +253,24 @@
             return valorRetorno;
         }
 
-        // creo unna función que valida el email
+        // creo una función para validar si el correo que el usuario introduce es correcto.
         function validarEmail(){
-            let valorRetorno=true; // Consideramos que la @ de correo es correcta
-            
-            // Obtener el valor del correo y eliminar espacios en blanco al inicio y al final
+            let valorRetorno=true; // Consideramos que la @de correo es correcta
             let email=(document.getElementById("correo").value).trim();
-            
-            // Separar el correo en dos partes usando "@" como separador
             let vEmail=email.split("@");
-            
-            // Verificar si hay exactamente una "@" en el correo
             if (vEmail.length!=2){
                 valorRetorno=false;
             } else {
-                let nombre=vEmail[0]; // Obtener la parte antes de "@"
-                let dominio=vEmail[1]; // Obtener la parte después de "@"
-                
-                // Verificar si la parte antes de "@" tiene algún contenido
+                let nombre=vEmail[0];
+                let dominio=vEmail[1];
                 if (nombre.length==0){
                     valorRetorno=false;
                 } else {
-                    let vDominio=dominio.split('.'); // Separar el dominio usando "." como separador
-                    
-                    // Verificar si el dominio tiene al menos un punto para separar subdominios
+                    let vDominio=dominio.split('.');
                     if (vDominio.length<=1){
                         valorRetorno=false;
-                    } else {
-                        // Verificar cada parte del dominio para asegurarse de que no esté vacía
-                        for(let i=0; ((i<vDominio.length) && (valorRetorno!=false)); i++){
+                    }else{
+                        for(let i=0; ((i<vDominio.length) && (valorRetorno!=false)) ; i++){
                             if (vDominio[i].length==0){
                                 valorRetorno=false;
                             }
@@ -266,32 +279,32 @@
                 }                
             }
 
-            // Lista de caracteres no permitidos en el correo electrónico
-            let vCaracterNoPermitido=['$','%','€','*', '+', '-', ';', ',', '{', '}','ñ','ç','¿','?','!','¡', '/', '\"', '\'', '\\', '|', '/'];
-            
-            // Verificar si el correo contiene algún carácter no permitido
+            let vCaracterNoPermitido=['$','%','€','*', '+', '-', ';', ',', '{', '}','?', '/', '\"', '\'', '\\', '|', '/']; // Alguno más ....
             for (let j=0; ((j<vCaracterNoPermitido.length) && (valorRetorno!=false)); j++){
                 if (email.includes(vCaracterNoPermitido[j])==true){
                     valorRetorno=false;
                 }
             }
 
-            return valorRetorno; // Devolver si el correo es válido o no
+            return valorRetorno;
         }
 
-
-        // creo una función que engloba a las otras 3 funciones y comprueba si el teléfono, DNI y email introducidos son correctos, sino muestra un alert/mensaje mostrando que el parámetro introducido es incorecto.
+        // creo una función que comprueba si las 3 funciones anteriores son correctas y sino muestra un alert diciendo el campo que no es correcto.
         function validarFormulario(){
             if (validarTelefono()==false){
                 alert("El número de teléfono introducido es incorrecto.");
             }
             if (validarDNI()==false){
-                alert("El DNI no tiene el formato correcto");
+                alert("El DNI no tiene el formato correcto.");
             }
             if (validarEmail()==false){
-                alert("El email es incorrecto");
+                alert("El correo introducido es incorrecto.");
+            }
+            if (camposObligatorios()==false){
+                alert("Faltan algunos campos por rellenar.");
             }
         }
+
 
 
     </script>
