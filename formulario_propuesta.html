@@ -55,7 +55,7 @@
                 <label for="correo">Correo electrónico</label>
                 <input type="text" id="correo" name="correo" style="width: 85%; margin-bottom: 15px;">
 
-                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" style="margin-left: 5px;">
+                <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" name="precargardatos" id="precargardatos" style="margin-left: 5px;" onclick="precargarDatos()">
         </fieldset>
 
         <fieldset style="margin-bottom: 20px;">
@@ -102,7 +102,7 @@
                 <fieldset >
                     <legend>PRESUPUESTOS DE LA PROPUESTA</legend>
         
-                    <input type="radio" name="presupuesto" id="menosdemil"><label for="menosdemil">Menos de 1000€</label>
+                    <input type="radio" name="presupuesto" id="menosdemil" checked><label for="menosdemil">Menos de 1000€</label>
                     <input type="radio" name="presupuesto" id="entremil" style="margin-left: 75px;"><label for="entremil">De 1000 a 5000€</label>
                     <input type="radio" name="presupuesto" id="masdediezmil" style="margin-left: 75px;"><label for="masdediezmil">De 5000 a 10000€</label>
         
@@ -160,6 +160,26 @@
             }
         };
 
+
+        // creo una función para mostrar datos por defecto si está activado el checbox precargar datos y si no está activado se ponen por defecto a blanco
+        function precargarDatos(){
+            let precargar = document.getElementById("precargardatos");
+
+            if (precargar.checked){
+                document.getElementById('nombre').value = "Ángel";
+                document.getElementById('apellidos').value = "Pérez Blanco";
+                document.getElementById('DNI').value = "45139990Y";
+                document.getElementById('telefono').value = "607493064";
+                document.getElementById('correo').value = "aperezb33@informatica.iesvalledeljerteplasencia.es";
+            }
+            else {
+                document.getElementById('nombre').value = "";
+                document.getElementById('apellidos').value = "";
+                document.getElementById('DNI').value = "";
+                document.getElementById('telefono').value = "";
+                document.getElementById('correo').value = "";
+            }
+        }
 
         // creo una función para asegurarme de que el usuario completa todos los campos que son obligatorios
         function camposObligatorios(){
