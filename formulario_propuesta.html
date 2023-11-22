@@ -202,35 +202,51 @@
 
             let valorRetorno=true;
 
-            if (Nombre.length <= 0){
-                alert("El campo nombre es obligatorio.");
+            if (Nombre.trim().length <= 0){
+                alert("El campo Nombre es obligatorio.");
+                document.getElementById("nombre").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if (Apellidos.length <= 0){
-                alert("El campo apellido es obligatorio.");
+            } if (Apellidos.trim().length <= 0){
+                alert("El campo Apellido es obligatorio.");
+                document.getElementById("apellidos").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if (Dni.length <= 0){
+            } if (Dni.trim().length <= 0){
                 alert("El campo dni es obligatorio.");
+                document.getElementById("DNI").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if (Telefono.length <= 0){
-                alert("El campo telefono es obligatorio.");
+            } if (Telefono.trim().length <= 0){
+                alert("El campo Teléfono es obligatorio.");
+                document.getElementById("telefono").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if (Correo.length <= 0){
-                alert("El campo correo es obligatorio.");
+            } if (Correo.trim().length <= 0){
+                alert("El campo Correo es obligatorio.");
+                document.getElementById("correo").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if (TituloPropuesta.length <= 0){
+            } if (TituloPropuesta.trim().length <= 0){
                 alert("El campo Titulo de la Propuesta es obligatorio.");
+                document.getElementById("titulopropuesta").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if (DescripcionPropuesta.length <= 0){
-                alert("La descripción de la propuesta no puede estar vacía.");
+            } if (DescripcionPropuesta.trim().length <= 0){
+                alert("La Descripción de la Propuesta no puede estar vacía.");
+                document.getElementById("descripcionpropuesta").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if ((Ninos.length <= 0 ) || (Jovenes.length <= 0) || (Ancianos.length <= 0)){
+            } if ((Ninos.trim().length <= 0 ) || (Jovenes.trim().length <= 0) || (Ancianos.trim().length <= 0)){
                 alert("El campo Destinatarios no puede estar vacío, debe seleccionar una opción.");
+                document.getElementById("ninos").style.border = "solid 4px red";
+                document.getElementById("jovenes").style.border = "solid 4px red";
+                document.getElementById("ancianos").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if ((InfraestructuraMunicipio.length <= 0 ) || (AltaDemanda.length <= 0) || (EstructuraUrbanistica.length <= 0 ) || (EstructuraTuristica.length <= 0)){
-                valorRetorno=false;
+            } if ((InfraestructuraMunicipio.trim().length <= 0 ) || (AltaDemanda.trim().length <= 0) || (EstructuraUrbanistica.trim().length <= 0 ) || (EstructuraTuristica.trim().length <= 0)){
                 alert("El campo Beneficios de la Propuesta no puede estar vacío, debe seleccionar alguna casilla.");
-            } if ((FechaInicio_Propuesta.length <= 0 ) || (FechaFin_Propuesta.length <= 0)){
+                document.getElementById("infraestructuramunicipio").style.border = "solid 4px red";
+                document.getElementById("altademanda").style.border = "solid 4px red";
+                document.getElementById("estructuraurbanistica").style.border = "solid 4px red";
+                document.getElementById("estructuraturistica").style.border = "solid 4px red";
+                valorRetorno=false;
+            } if ((FechaInicio_Propuesta.trim().length <= 0 ) || (FechaFin_Propuesta.trim().length <= 0)){
                 alert("Fecha Inicial y Final de la propuesta no pueden estar vacíos o ser iguales.");
+                document.getElementById("fechainicio_propuesta").style.border = "solid 4px red";
+                document.getElementById("fechafin_propuesta").style.border = "solid 4px red";
                 valorRetorno=false;
             }
 
