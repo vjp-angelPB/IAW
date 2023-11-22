@@ -11,6 +11,8 @@
     </style> -->
 </head>
 <body>
+
+    <!-- Imagen con estilo css del escudo de plasencia -->
     <img src="img/Escudo_Plasencia.png" alt="Escudo de Plasencia" style="height: 130px; display: block; margin: auto;">
 
     <hr style="height: 3px; background-color: grey;">
@@ -20,8 +22,10 @@
 
     <hr style="height: 3px; background-color: grey;">
 
-    <form action="" method="get" onsubmit="return validarFormulario()">
+    <!-- Creo el formulario con la función que lo valida -->
+    <form action="anyAction" method="get" onsubmit="return validarFormulario();">
 
+        <!-- Es el checkbox que te oculta los datos económicos si está seleccionado, con su correspondiente función -->
         <label for="ocultardatoseconomicos">Ocultar datos económicos</label><input type="checkbox" id="ocultardatoseconomicos" name="ocultardatoseconomicos" checked onclick="mostrarpresupuesto()">
 
         <br>
@@ -31,6 +35,7 @@
 
         <br>
 
+        <!-- Campo de DATOS PERSONALES -->
         <fieldset style="margin-bottom: 20px;">
             <legend>DATOS PERSONALES</legend>
                 <!-- Nombre, apellidos, nif, telefono y correo -->
@@ -55,21 +60,25 @@
                 <label for="correo">Correo electrónico</label>
                 <input type="text" id="correo" name="correo" style="width: 85%; margin-bottom: 15px;">
 
+                <!-- Precargar datos con su función para que autocomplete los campos si fuera necesario -->
                 <label for="precargardatos" style="margin-left: 85%;">Precargar datos</label><input type="checkbox" name="precargardatos" id="precargardatos" style="margin-left: 5px;" onclick="precargarDatos()">
         </fieldset>
 
+        <!-- Campo de TÍTULO DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px;">
             <legend>TITULO DE LA PROPUESTA</legend>
             <textarea name="titulopropuesta" id="titulopropuesta" cols="118" rows="3"></textarea>
 
         </fieldset>
 
+        <!-- Campo de DESCIPCIÓN DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px;">
             <legend>DESCRIPCION DE LA PROPUESTA</legend>
             
             <textarea name="descripcionpropuesta" id="descripcionpropuesta" cols="118" rows="5" placeholder="Breve descripción de la propesta (por ejemplo, poner una fuente en Main St.)"></textarea>
         </fieldset>
 
+        <!-- Campo de DESTINATARIOS -->
         <fieldset style="margin-bottom: 20px;">
             <legend>DESTINATARIOS</legend>
 
@@ -79,6 +88,7 @@
 
         </fieldset>
 
+        <!-- Campo de BENEFICIOS DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px;">
             <legend>BENEFICIOS DE LA PROPUESTA</legend>
 
@@ -98,6 +108,7 @@
 
         </fieldset>
 
+        <!-- Campo de PRESUPUESTOS DE LA PROPUESTA que por defecto aparecerá oculto y chequeado -->
         <div id="presupuestopropuesta" style="display: inline-flex;">
                 <fieldset >
                     <legend>PRESUPUESTOS DE LA PROPUESTA</legend>
@@ -109,6 +120,7 @@
                 </fieldset>
         </div>
         
+        <!-- Campo de DURACIÓN DE LA PROPUESTA -->
         <fieldset style="margin-bottom: 20px; margin-top: 20px;">
             <legend>DURACIÓN DE LA PROPUESTA</legend>
 
@@ -117,6 +129,7 @@
 
         </fieldset>
 
+        <!-- Campo de DOCUMENTACIÓN APORTADA -->
         <fieldset>
             <legend>DOCUMENTACIÓN APORTADA</legend>
             <p style="margin-top: 0px;">Puede añadir fotos o cualquier otro documento que estime oportuno para la propuesta</p>
@@ -197,15 +210,15 @@
             let DescripcionPropuesta = document.getElementById("descripcionpropuesta").value;
 
             // DESTINATARIOS
-            let Ninos = document.getElementById("ninos").value;
-            let Jovenes = document.getElementById("jovenes").value;
-            let Ancianos = document.getElementById("ancianos").value;
+            let Ninos = document.getElementById("ninos");
+            let Jovenes = document.getElementById("jovenes");
+            let Ancianos = document.getElementById("ancianos");
 
             // BENEFICIOS DE LA PROPUESTA
-            let InfraestructuraMunicipio = document.getElementById("infraestructuramunicipio").value;
-            let AltaDemanda = document.getElementById("altademanda").value;
-            let EstructuraUrbanistica = document.getElementById("estructuraurbanistica").value;
-            let EstructuraTuristica = document.getElementById("estructuraturistica").value;
+            let InfraestructuraMunicipio = document.getElementById("infraestructuramunicipio");
+            let AltaDemanda = document.getElementById("altademanda");
+            let EstructuraUrbanistica = document.getElementById("estructuraurbanistica");
+            let EstructuraTuristica = document.getElementById("estructuraturistica");
 
             // DURACIÓN DE LA PROPUESTA
             let FechaInicio_Propuesta = document.getElementById("fechainicio_propuesta").value;
@@ -257,7 +270,7 @@
             }
 
             // comprobamos si los destinatarios están seleccionados
-            if ((!Ninos.checked) || (!Jovenes.checked) || (!Ancianos.checked)){
+            if ((!Ninos.checked) && (!Jovenes.checked) && (!Ancianos.checked)){
                 alert("El campo Destinatarios no puede estar vacío, debe seleccionar una opción.");
                 document.getElementById("ninos").style.border = "solid 4px red";
                 document.getElementById("jovenes").style.border = "solid 4px red";
@@ -266,7 +279,7 @@
             } 
             
             // comprobamos si los beneficios de la propuesta están seleccionados
-            if ((!InfraestructuraMunicipio.checked) || (!AltaDemanda.checked) || (!EstructuraUrbanistica.checked) || (!EstructuraTuristica.checked)){
+            if ((!InfraestructuraMunicipio.checked) && (!AltaDemanda.checked) && (!EstructuraUrbanistica.checked) && (!EstructuraTuristica.checked)){
                 alert("El campo Beneficios de la Propuesta no puede estar vacío, debe seleccionar alguna casilla.");
                 document.getElementById("infraestructuramunicipio").style.border = "solid 4px red";
                 document.getElementById("altademanda").style.border = "solid 4px red";
@@ -276,7 +289,7 @@
             } 
             
             // comprobamos si las fechas de inicio son correctas
-            if ((FechaInicio_Propuesta.trim().length <= 0 ) || (FechaFin_Propuesta.trim().length <= 0)){
+            if ((FechaInicio_Propuesta ) || (FechaFin_Propuesta)){
                 alert("Fecha Inicial y Final de la propuesta no pueden estar vacíos o ser iguales.");
                 document.getElementById("fechainicio_propuesta").style.border = "solid 4px red";
                 document.getElementById("fechafin_propuesta").style.border = "solid 4px red";
@@ -360,18 +373,26 @@
 
         // creo una función que comprueba si las 3 funciones anteriores son correctas y sino muestra un alert diciendo el campo que no es correcto.
         function validarFormulario(){
+
+            valorRetorno = true;
+
             if (validarTelefono()==false){
                 alert("El número de teléfono introducido es incorrecto.");
+                valorRetorno = false;
             }
             if (validarDNI()==false){
                 alert("El DNI no tiene el formato correcto.");
+                valorRetorno = false;
             }
             if (validarEmail()==false){
                 alert("El correo introducido es incorrecto.");
+                valorRetorno = false;
             }
             if (camposObligatorios()==false){
                 alert("Faltan algunos campos por rellenar.");
+                valorRetorno = false;
             }
+            return valorRetorno;
         }
 
 
