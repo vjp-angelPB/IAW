@@ -214,6 +214,9 @@
             // INICIALIZAMOS LA VARIABLE VALOR RETORNO A TRUE POR DEFECTO   
             let valorRetorno=true;
 
+
+            // COMPROBACIONES 
+
             // Comprobamos si los datos personales son correctos
             if (Nombre.trim().length <= 0){
                 alert("El campo Nombre es obligatorio.");
@@ -237,20 +240,24 @@
                 valorRetorno=false;
             } 
             
+
             // comprobamos si el titulo de la propuesta es correcto
             if (TituloPropuesta.trim().length <= 0){
                 alert("El campo Titulo de la Propuesta es obligatorio.");
                 document.getElementById("titulopropuesta").style.border = "solid 4px red";
                 valorRetorno=false;
+            }
+
 
             // comprobamos si la descripcion de la propuesta es correcto
-            } if (DescripcionPropuesta.trim().length <= 0){
+            if (DescripcionPropuesta.trim().length <= 0){
                 alert("La Descripción de la Propuesta no puede estar vacía.");
                 document.getElementById("descripcionpropuesta").style.border = "solid 4px red";
                 valorRetorno=false;
+            }
 
             // comprobamos si los destinatarios están seleccionados
-            } if ((Ninos.trim().length <= 0 ) || (Jovenes.trim().length <= 0) || (Ancianos.trim().length <= 0)){
+            if ((!Ninos.checked) || (!Jovenes.checked) || (!Ancianos.checked)){
                 alert("El campo Destinatarios no puede estar vacío, debe seleccionar una opción.");
                 document.getElementById("ninos").style.border = "solid 4px red";
                 document.getElementById("jovenes").style.border = "solid 4px red";
@@ -259,7 +266,7 @@
             } 
             
             // comprobamos si los beneficios de la propuesta están seleccionados
-            if ((InfraestructuraMunicipio.trim().length <= 0 ) || (AltaDemanda.trim().length <= 0) || (EstructuraUrbanistica.trim().length <= 0 ) || (EstructuraTuristica.trim().length <= 0)){
+            if ((!InfraestructuraMunicipio.checked) || (!AltaDemanda.checked) || (!EstructuraUrbanistica.checked) || (!EstructuraTuristica.checked)){
                 alert("El campo Beneficios de la Propuesta no puede estar vacío, debe seleccionar alguna casilla.");
                 document.getElementById("infraestructuramunicipio").style.border = "solid 4px red";
                 document.getElementById("altademanda").style.border = "solid 4px red";
