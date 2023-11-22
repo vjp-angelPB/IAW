@@ -183,25 +183,38 @@
 
         // creo una función para asegurarme de que el usuario completa todos los campos que son obligatorios
         function camposObligatorios(){
+            // DATOS DE LA PROPUESTA
             let Nombre = document.getElementById("nombre").value;
             let Apellidos = document.getElementById("apellidos").value;
             let Dni = document.getElementById("DNI").value;
             let Telefono = document.getElementById("telefono").value;
             let Correo = document.getElementById("correo").value;
+
+            // TITULO DE LA PROPUESTA
             let TituloPropuesta = document.getElementById("titulopropuesta").value;
+
+            // DESCRIPCION DE LA PROPUESTA
             let DescripcionPropuesta = document.getElementById("descripcionpropuesta").value;
+
+            // DESTINATARIOS
             let Ninos = document.getElementById("ninos").value;
             let Jovenes = document.getElementById("jovenes").value;
             let Ancianos = document.getElementById("ancianos").value;
+
+            // BENEFICIOS DE LA PROPUESTA
             let InfraestructuraMunicipio = document.getElementById("infraestructuramunicipio").value;
             let AltaDemanda = document.getElementById("altademanda").value;
             let EstructuraUrbanistica = document.getElementById("estructuraurbanistica").value;
             let EstructuraTuristica = document.getElementById("estructuraturistica").value;
+
+            // DURACIÓN DE LA PROPUESTA
             let FechaInicio_Propuesta = document.getElementById("fechainicio_propuesta").value;
             let FechaFin_Propuesta = document.getElementById("fechafin_propuesta").value;
 
+            // INICIALIZAMOS LA VARIABLE VALOR RETORNO A TRUE POR DEFECTO   
             let valorRetorno=true;
 
+            // Comprobamos si los datos personales son correctos
             if (Nombre.trim().length <= 0){
                 alert("El campo Nombre es obligatorio.");
                 document.getElementById("nombre").style.border = "solid 4px red";
@@ -222,28 +235,41 @@
                 alert("El campo Correo es obligatorio.");
                 document.getElementById("correo").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if (TituloPropuesta.trim().length <= 0){
+            } 
+            
+            // comprobamos si el titulo de la propuesta es correcto
+            if (TituloPropuesta.trim().length <= 0){
                 alert("El campo Titulo de la Propuesta es obligatorio.");
                 document.getElementById("titulopropuesta").style.border = "solid 4px red";
                 valorRetorno=false;
+
+            // comprobamos si la descripcion de la propuesta es correcto
             } if (DescripcionPropuesta.trim().length <= 0){
                 alert("La Descripción de la Propuesta no puede estar vacía.");
                 document.getElementById("descripcionpropuesta").style.border = "solid 4px red";
                 valorRetorno=false;
+
+            // comprobamos si los destinatarios están seleccionados
             } if ((Ninos.trim().length <= 0 ) || (Jovenes.trim().length <= 0) || (Ancianos.trim().length <= 0)){
                 alert("El campo Destinatarios no puede estar vacío, debe seleccionar una opción.");
                 document.getElementById("ninos").style.border = "solid 4px red";
                 document.getElementById("jovenes").style.border = "solid 4px red";
                 document.getElementById("ancianos").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if ((InfraestructuraMunicipio.trim().length <= 0 ) || (AltaDemanda.trim().length <= 0) || (EstructuraUrbanistica.trim().length <= 0 ) || (EstructuraTuristica.trim().length <= 0)){
+            } 
+            
+            // comprobamos si los beneficios de la propuesta están seleccionados
+            if ((InfraestructuraMunicipio.trim().length <= 0 ) || (AltaDemanda.trim().length <= 0) || (EstructuraUrbanistica.trim().length <= 0 ) || (EstructuraTuristica.trim().length <= 0)){
                 alert("El campo Beneficios de la Propuesta no puede estar vacío, debe seleccionar alguna casilla.");
                 document.getElementById("infraestructuramunicipio").style.border = "solid 4px red";
                 document.getElementById("altademanda").style.border = "solid 4px red";
                 document.getElementById("estructuraurbanistica").style.border = "solid 4px red";
                 document.getElementById("estructuraturistica").style.border = "solid 4px red";
                 valorRetorno=false;
-            } if ((FechaInicio_Propuesta.trim().length <= 0 ) || (FechaFin_Propuesta.trim().length <= 0)){
+            } 
+            
+            // comprobamos si las fechas de inicio son correctas
+            if ((FechaInicio_Propuesta.trim().length <= 0 ) || (FechaFin_Propuesta.trim().length <= 0)){
                 alert("Fecha Inicial y Final de la propuesta no pueden estar vacíos o ser iguales.");
                 document.getElementById("fechainicio_propuesta").style.border = "solid 4px red";
                 document.getElementById("fechafin_propuesta").style.border = "solid 4px red";
