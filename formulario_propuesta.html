@@ -82,9 +82,9 @@
         <fieldset style="margin-bottom: 20px;">
             <legend>DESTINATARIOS</legend>
 
-            <input type="checkbox" name="ninos" id="ninos"><label for="ninos">Niños</label>
-            <input type="checkbox" name="jovenes" id="jovenes" style="margin-left: 170px;"><label for="jovenes">Jovenes</label>
-            <input type="checkbox" name="ancianos" id="ancianos" style="margin-left: 170px;"><label for="ancianos">Ancianos</label>
+            <input type="checkbox" name="ninos" id="ninos"><label for="ninos" id="ninoslabel">Niños</label>
+            <input type="checkbox" name="jovenes" id="jovenes" style="margin-left: 170px;"><label for="jovenes" id="joveneslabel">Jovenes</label>
+            <input type="checkbox" name="ancianos" id="ancianos" style="margin-left: 170px;"><label for="ancianos" id="ancianoslabel">Ancianos</label>
 
         </fieldset>
 
@@ -92,19 +92,19 @@
         <fieldset style="margin-bottom: 20px;">
             <legend>BENEFICIOS DE LA PROPUESTA</legend>
 
-            <input type="checkbox" name="infraestructuramunicipio" id="infraestructuramunicipio"><label for="infraestructuramunicipio">Mejora de las infraestructuras del municipio</label>
+            <input type="checkbox" name="infraestructuramunicipio" id="infraestructuramunicipio"><label for="infraestructuramunicipio" id="infraestructuramunicipiolabel">Mejora de las infraestructuras del municipio</label>
 
-            <input type="checkbox" name="altademanda" id="altademanda" style="margin-left: 50px;"><label for="altademanda" style="display: inline-block;">Alta demanda</label>
+            <input type="checkbox" name="altademanda" id="altademanda" style="margin-left: 50px;"><label for="altademanda" style="display: inline-block;" id="altademandalabel">Alta demanda</label>
             
             <br><br>
 
-            <input type="checkbox" name="estructuraurbanistica" id="estructuraurbanistica"><label for="estructuraurbanistica">Mejora de la estructura ubrbanística del municipio</label>
+            <input type="checkbox" name="estructuraurbanistica" id="estructuraurbanistica"><label for="estructuraurbanistica" id="estructuraurbanisticalabel">Mejora de la estructura ubrbanística del municipio</label>
             
-            <input type="checkbox" name="estructuraturistica" id="estructuraturistica" style="margin-left: 10px;"><label for="estructuraturistica" style="display: inline-block;">Mejora de la estructura turística del municipio</label>
+            <input type="checkbox" name="estructuraturistica" id="estructuraturistica" style="margin-left: 10px; "><label for="estructuraturistica" style="display: inline-block;" id="estructuraturisticalabel">Mejora de la estructura turística del municipio</label>
             
             <br><br>
 
-            <input type="checkbox"><input type="text" placeholder="Cualquier otro beneficio">
+            <input type="checkbox" name="otrobeneficio" id="otrobeneficio"><input type="text" id="cualquierotrobeneficio" name="otrobeneficio" placeholder="Cualquier otro beneficio">
 
         </fieldset>
 
@@ -124,8 +124,8 @@
         <fieldset style="margin-bottom: 20px; margin-top: 20px;">
             <legend>DURACIÓN DE LA PROPUESTA</legend>
 
-            <label for="fechainicio_propuesta">Fecha de inicio de la propuesta </label><input type="date" name="fechainicio_propuesta" id="fechainicio_propuesta">
-            <label for="fechafin_propuesta" style="margin-left: 90px;">Fecha de fin de la propuesta </label><input type="date" name="fechafin_propuesta" id="fechafin_propuesta">
+            <label for="fechainicio_propuesta">Fecha de inicio de la propuesta </label><input type="date" name="fechainicio_propuesta" id="fechainicio_propuesta" required>
+            <label for="fechafin_propuesta" style="margin-left: 90px;">Fecha de fin de la propuesta </label><input type="date" name="fechafin_propuesta" id="fechafin_propuesta" required>
 
         </fieldset>
 
@@ -219,10 +219,9 @@
             let AltaDemanda = document.getElementById("altademanda");
             let EstructuraUrbanistica = document.getElementById("estructuraurbanistica");
             let EstructuraTuristica = document.getElementById("estructuraturistica");
+            let OtroBeneficio = document.getElementById("otrobeneficio");
+            let CualquierOtroBeneficio = document.getElementById("cualquierotrobeneficio").value;
 
-            // DURACIÓN DE LA PROPUESTA
-            let FechaInicio_Propuesta = document.getElementById("fechainicio_propuesta").value;
-            let FechaFin_Propuesta = document.getElementById("fechafin_propuesta").value;
 
             // INICIALIZAMOS LA VARIABLE VALOR RETORNO A TRUE POR DEFECTO   
             let valorRetorno=true;
@@ -231,25 +230,26 @@
             // COMPROBACIONES 
 
             // Comprobamos si los datos personales son correctos
+            // Nombre === "" (es otra forma de hacerlo)
             if (Nombre.trim().length <= 0){
                 alert("El campo Nombre es obligatorio.");
-                document.getElementById("nombre").style.border = "solid 4px red";
+                document.getElementById("nombre").style.border = "solid 3px red";
                 valorRetorno=false;
             } if (Apellidos.trim().length <= 0){
                 alert("El campo Apellido es obligatorio.");
-                document.getElementById("apellidos").style.border = "solid 4px red";
+                document.getElementById("apellidos").style.border = "solid 3px red";
                 valorRetorno=false;
             } if (Dni.trim().length <= 0){
                 alert("El campo dni es obligatorio.");
-                document.getElementById("DNI").style.border = "solid 4px red";
+                document.getElementById("DNI").style.border = "solid 3px red";
                 valorRetorno=false;
             } if (Telefono.trim().length <= 0){
                 alert("El campo Teléfono es obligatorio.");
-                document.getElementById("telefono").style.border = "solid 4px red";
+                document.getElementById("telefono").style.border = "solid 3px red";
                 valorRetorno=false;
             } if (Correo.trim().length <= 0){
                 alert("El campo Correo es obligatorio.");
-                document.getElementById("correo").style.border = "solid 4px red";
+                document.getElementById("correo").style.border = "solid 3px red";
                 valorRetorno=false;
             } 
             
@@ -257,7 +257,7 @@
             // comprobamos si el titulo de la propuesta es correcto
             if (TituloPropuesta.trim().length <= 0){
                 alert("El campo Titulo de la Propuesta es obligatorio.");
-                document.getElementById("titulopropuesta").style.border = "solid 4px red";
+                document.getElementById("titulopropuesta").style.border = "solid 3px red";
                 valorRetorno=false;
             }
 
@@ -265,36 +265,28 @@
             // comprobamos si la descripcion de la propuesta es correcto
             if (DescripcionPropuesta.trim().length <= 0){
                 alert("La Descripción de la Propuesta no puede estar vacía.");
-                document.getElementById("descripcionpropuesta").style.border = "solid 4px red";
+                document.getElementById("descripcionpropuesta").style.border = "solid 3px red";
                 valorRetorno=false;
             }
 
             // comprobamos si los destinatarios están seleccionados
             if ((!Ninos.checked) && (!Jovenes.checked) && (!Ancianos.checked)){
                 alert("El campo Destinatarios no puede estar vacío, debe seleccionar una opción.");
-                document.getElementById("ninos").style.border = "solid 4px red";
-                document.getElementById("jovenes").style.border = "solid 4px red";
-                document.getElementById("ancianos").style.border = "solid 4px red";
+                document.getElementById("ninoslabel").style.textDecoration = "underline red 2px";
+                document.getElementById("joveneslabel").style.textDecoration = "underline red 2px";
+                document.getElementById("ancianoslabel").style.textDecoration = "underline red 2px";
                 valorRetorno=false;
             } 
-            
+
             // comprobamos si los beneficios de la propuesta están seleccionados
-            if ((!InfraestructuraMunicipio.checked) && (!AltaDemanda.checked) && (!EstructuraUrbanistica.checked) && (!EstructuraTuristica.checked)){
+            if ((!InfraestructuraMunicipio.checked) && (!AltaDemanda.checked) && (!EstructuraUrbanistica.checked) && (!EstructuraTuristica.checked) && ((CualquierOtroBeneficio.trim().length <= 0) && (!OtroBeneficio.checked))){
                 alert("El campo Beneficios de la Propuesta no puede estar vacío, debe seleccionar alguna casilla.");
-                document.getElementById("infraestructuramunicipio").style.border = "solid 4px red";
-                document.getElementById("altademanda").style.border = "solid 4px red";
-                document.getElementById("estructuraurbanistica").style.border = "solid 4px red";
-                document.getElementById("estructuraturistica").style.border = "solid 4px red";
-                valorRetorno=false;
+                document.getElementById("infraestructuramunicipiolabel").style.textDecoration = "underline red 2px";
+                document.getElementById("altademandalabel").style.textDecoration = "underline red 2px";
+                document.getElementById("estructuraurbanisticalabel").style.textDecoration = "underline red 2px";
+                document.getElementById("estructuraturisticalabel").style.textDecoration = "underline red 2px";
+                valorRetorno=false
             } 
-            
-            // comprobamos si las fechas de inicio son correctas
-            if ((FechaInicio_Propuesta ) || (FechaFin_Propuesta)){
-                alert("Fecha Inicial y Final de la propuesta no pueden estar vacíos o ser iguales.");
-                document.getElementById("fechainicio_propuesta").style.border = "solid 4px red";
-                document.getElementById("fechafin_propuesta").style.border = "solid 4px red";
-                valorRetorno=false;
-            }
 
             return valorRetorno;
         };
